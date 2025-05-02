@@ -29,7 +29,7 @@
 
             try {
                 // URL auf HTTP anpassen, falls kein SSL verwendet wird
-                const response = await fetch("load.php", {
+                const response = await fetch("https://trinkfit.wanaka.ch/etl/load.php", {
                     method: "POST",
                     headers: {
                         'Content-Type': 'application/json' // Setze den Content-Type auf JSON

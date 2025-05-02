@@ -24,9 +24,6 @@ catch(PDOException $e){
     echo json_encode(["status" => "error", "message" => "DB connection failed"]);
 }
 
-
-
-
 ###################################### Empfangen der JSON-Daten
 
 $inputJSON = file_get_contents('php://input'); // JSON-Daten aus dem Body der Anfrage
