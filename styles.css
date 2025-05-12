@@ -6,6 +6,7 @@ body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
   color: #17296d;
+  background-color: ;
   line-height: 1.5;
 }
 h1, h2, h3 {
@@ -14,7 +15,7 @@ h1, h2, h3 {
   font-family: "oso-sans", sans-serif;
 }
 .container {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 0 1em;
 }
@@ -28,13 +29,18 @@ header {
   align-items: flex-start;
 }
 header .logo-img {
-  width: 60px;
-  height: auto;
+  width: auto;
+  height: 200px;
+  margin: 0 0 0 20px;
+  display: block;
 }
-header .site-name {
-  color: #EDC643;
-  font-size: 2em;
-  font-weight: bold;
+
+header .logo-text {
+  width: auto;
+  height: 100px;
+  margin: 20px 0 0 0
+  ;
+  display: block;
 }
 .header-wave, .footer-wave {
   display: block;
@@ -58,8 +64,6 @@ header .site-name {
   height: auto;
 }
 .note {
-  color: #555555;
-  font-size: 0.9em;
   font-style: italic;
 }
 
@@ -81,11 +85,13 @@ aside.tip-box p {
 /* Vorteile-Box Styles */
 .advantages {
   background: #EDC643;
-  color: #17296d;
+  font-weight: bold;
+  color: #ffffff;
   padding: 1em;
   border-radius: 15px;
   clear: both;
   margin: 1em 0;
+  padding: 2em 10em;
 }
 .advantages h2 {
   margin: 0 0 0.5em 0;
@@ -121,9 +127,11 @@ footer p {
     flex: 1;
   }
   .image-content {
+
     flex: 0 0 auto;
     text-align: center;
-    margin: 0;
+    margin: 40px 0;
+    width: 35%;
   }
   aside.tip-box {
     float: right;
