@@ -1,58 +1,84 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TrinkFit</title>
-  <faveicon href="favicon.ico" type="images/faveicon.ico"/>
-  <link rel="stylesheet" href="styles.css" />
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrinkFit</title>
+  
+    <!-- Google Font: Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  
+    <!-- Adobe Font: Oso Sans Semi Bold -->
+    <link rel="stylesheet" href="https://use.typekit.net/buy8dvn.css">
+  
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  
 <body>
-  <header class="header">
-    <div class="logo">TrinkFit</div>
+  <!-- Header: Logo links und Seitentitel rechts -->
+  <header>
+    <img src="https://via.placeholder.com/60" alt="TrinkFit Logo" class="logo-img">
+    <div class="site-name">TrinkFit</div>
+    <!-- Wellen-SVG am Header-Unterrand -->
+    <svg class="header-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 80" preserveAspectRatio="none">
+      <path d="M0,80 Q600,0 1200,80 L1200,0 L0,0 Z" fill="#FFFFFF"></path>
+    </svg>
   </header>
 
   <main>
-    <section class="intro">
-      <h1>Hey! Willkommen bei TrinkFit! Es klappt</h1>
-      <p>Hier kannst du deinen Trinkfortschritt messen und damit akiv deine Gesundheit verbessern.</p>
+    <div class="container">
+      <!-- Begrüßungs- und Anleitungssektion -->
+      <section class="intro-section">
+        <div class="text-content">
+          <h1>Hey! Willkommen bei TrinkFit!</h1>
+          <p>Hier kannst du deinen Trinkfortschritt messen und damit aktiv deine Gesundheit verbessern.</p>
+          <h2>So funktioniert das TrinkFit Pad:</h2>
+          <ol>
+            <li>Schließe das TrinkFit Pad am Strom an und starte es</li>
+            <li>Warte 10 Sekunden und folge den Anweisungen auf dem Display</li>
+            <li>Stelle dein volles Glas auf das TrinkFit Pad</li>
+            <li>Trinke aus dem Glas und stelle es immer wieder zurück auf das TrinkFit Pad</li>
+            <li>Glas leer getrunken? Nimm das Glas vom TrinkFit Pad und stelle das TrinkFit Pad mit dem Knopf wieder auf Tara. Nach 10&nbsp;Sekunden ist das TrinkFit Pad wieder einsatzfähig.</li>
+            <li>Beobachte deinen Fortschritt hier online und <strong>trink dich fit</strong>.</li>
+          </ol>
+          <p class="note">Hinweis: Falsche Messdaten oder Fehlermeldung auf dem Display? Einfach den Tara-Button drücken und so das TrinkFit Pad neu starten.</p>
+        </div>
+        <div class="image-content">
+          <img src="https://via.placeholder.com/300x400" alt="Wasserglas Platzhalter">
+        </div>
+      </section>
 
-      <h2>So funktioniert das TrinkFit Pad:</h2>
-      <ol>
-        <li>TrinkFit Pad am Strom anschliessen</li>
-        <li>Glas füllen und auf das TrinkFit Pad stellen</li>
-        <li>Trinkst du dein Glas den ganzen Tag über – TrinkFit misst deinen Fortschritt und erinnert dich aktiv mittels Blinken, wenn du seit 3 Stunden nicht mehr aus dem TrinkFit Glas getrunken hast.</li>
-        <li>Beobachte deinen Fortschritt online und <strong>trink dich fit</strong></li>
-      </ol>
-      <img src="pad.png" alt="TrinkFit Pad" class="pad-img" />
-    </section>
+      <!-- Tipp-Box als Seitenleiste -->
+      <aside class="tip-box">
+        <h3>TrinkFit Tipp!</h3>
+        <p>Keine Lust auf Wasser? Verdünnte Fruchtsäfte oder ungesüsster Tee bringen Abwechslung!</p>
+      </aside>
 
-    <section class="statistik">
-      <p><strong>Deine TrinkFit Statistik</strong> <span class="datum">05.04.2025</span></p>
-      <p>Du hast heute <strong>1.75 L</strong> getrunken. Noch <strong>0.25 L</strong> bis zum Ziel!</p>
+      <!-- Vorteile-Box -->
+      <section class="advantages">
+        <h2>Gesundheitliche Vorteile von genügend Wasser-Trinken</h2>
+        <ul>
+          <li>Unterstützt den Stoffwechsel und die Verdauung</li>
+          <li>Fördert Konzentration und geistige Leistungsfähigkeit</li>
+          <li>Hält Haut und Gewebe geschmeidig</li>
+          <li>Reguliert die Körpertemperatur</li>
+          <li>Spült Schadstoffe aus dem Körper</li>
+          <li>Beugt Kopfschmerzen und Müdigkeit vor</li>
+          <li>Unterstützt die Funktion von Nieren und Herz</li>
+        </ul>
+      </section>
+    </div>
 
-      <button class="btn">Tagesverlauf</button>
-      <button class="btn">Wochenverlauf</button>
-
-      <div class="chart-placeholder">[Diagramm-Platzhalter]</div>
-    </section>
-
-    <section class="info-box">
-      <h3>Gesundheitliche Vorteile von genügend Wasser-Trinken</h3>
-      <ul>
-        <li>Unterstützt den Stoffwechsel und die Verdauung</li>
-        <li>Fördert Konzentration und geistige Leistungsfähigkeit</li>
-        <li>Hält Haut und Gewebe geschmeidig</li>
-        <li>Reguliert die Körpertemperatur</li>
-        <li>Spült Schadstoffe aus dem Körper</li>
-        <li>Beugt Kopfschmerzen und Müdigkeit vor</li>
-        <li>Unterstützt die Funktion von Nieren und Herz</li>
-      </ul>
-    </section>
+    <!-- Wellen-SVG am Übergang zum Footer -->
+    <svg class="footer-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 80" preserveAspectRatio="none">
+      <path d="M0,0 Q600,80 1200,0 L1200,80 L0,80 Z" fill="#17296d"></path>
+    </svg>
   </main>
 
-  <footer class="footer">
-    <p>Copyright 2025 – Milena Stadelmann & Wanaka Emmenegger mmp23cv IM4</p>
+  <footer>
+    <div class="container">
+      <p>Copyright 2025 – Milena Stadelmann &amp; Wanaka Ermenegger (mmp23cv IM4)</p>
+    </div>
   </footer>
 </body>
 </html>
