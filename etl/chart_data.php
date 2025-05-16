@@ -1,5 +1,5 @@
 <?php
-require_once("load.php");
+require_once("db_config.php");
 
 try {
   $pdo = new PDO($dsn, $db_user, $db_pass, $options);
