@@ -74,6 +74,29 @@ h1, h2, h3 {
   font-style: italic;
 }
 
+.chart-toggle {
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  margin: 2em 0;
+}
+
+.chart-toggle button {
+  border-radius: 999px;
+  padding: 0.6em 1.8em;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  background: #f0f3fa;
+  color: #17296d;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.chart-toggle button.active {
+  background: white;
+  border: 2px solid #edc643;
+}
+
 /* Tipp-Box (Aside) Styles */
 aside.tip-box {
   background: #17296d;
@@ -114,6 +137,34 @@ aside.tip-box p {
 .advantages li {
   margin-bottom: 0.3em;
 }
+
+.trinkfortschritt-box {
+  text-align: center;
+  margin: 2em auto;
+  max-width: 600px;
+}
+
+.trinkfortschritt {
+  width: 100%;
+  height: 40px;
+  background: #dde1f4;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.trinkfortschritt-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(to right, #17296d, #4153a3);
+  border-radius: 999px 0 0 999px;
+  transition: width 1s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+
 
 /* Footer Styles */
 footer {

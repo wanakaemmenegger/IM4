@@ -1,102 +1,32 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TrinkFit</title>
-  
-    <!-- Google Font: Roboto -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  
-    <!-- Adobe Font: Oso Sans Semi Bold -->
-    <link rel="stylesheet" href="https://use.typekit.net/buy8dvn.css">
-  
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TrinkFit</title>
 
-  </head>
-  <!-- Chart.js einbinden -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.typekit.net/buy8dvn.css" />
 
-<!-- JS-Logik für Wochenchart -->
-<script>
-fetch('etl/chart_data.php')
-  .then(response => response.json())
-  .then(data => {
-    const ctx = document.getElementById('wochenChart').getContext('2d');
-
-    // Farbverlauf erstellen
-    const gradient = ctx.createLinearGradient(0, 0, 0, 400);
-    gradient.addColorStop(0, '#2f3d7e');
-    gradient.addColorStop(1, '#17296d');
-
-    const labels = data.map(e => e.wochentag);
-    const werte = data.map(e => e.summe);
-
-    new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: labels,
-        datasets: [
-          {
-            label: 'Getrunken (L)',
-            data: werte,
-            backgroundColor: gradient,
-            borderRadius: 20,
-            borderSkipped: false
-          },
-          {
-            label: 'Dein täglicher Trinkbedarf',
-            data: Array(7).fill(1.8),
-            type: 'line',
-            borderColor: '#edc643',
-            borderWidth: 4,
-            pointRadius: 0,
-            fill: false
-          }
-        ]
-      },
-      options: {
-        responsive: true,
-        scales: {
-          y: {
-            beginAtZero: true,
-            max: 3
-          }
-        },
-        plugins: {
-          legend: {
-            labels: {
-              color: '#17296d',
-              font: {
-                family: 'Roboto',
-                size: 14
-              }
-            }
-          }
-        }
-      }
-    });
-  });
-</script>
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
 
 <body>
-<header class="site-header">
-  <img src="images/Logo_Trink_Fit_transparent.png" alt="TrinkFit Logo" class="logo-img">
-  <img src="images/Logo_Trink_Fit-03_transparent.png" alt="TrinkFit Schriftzug" class="logo-text">
-</header>
+  <header class="site-header">
+    <img src="images/Logo_Trink_Fit_transparent.png" alt="TrinkFit Logo" class="logo-img" />
+    <img src="images/Logo_Trink_Fit-03_transparent.png" alt="TrinkFit Schriftzug" class="logo-text" />
+  </header>
 
-<div class="wave-wrapper">
-  <svg class="header-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-    <path fill="#17296d" fill-opacity="1"
-      d="M0,64L60,64C120,64,240,64,360,90.7C480,117,600,171,720,170.7C840,171,960,117,1080,106.7C1200,96,1320,128,1380,144L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
-    </path>
-  </svg>
-</div>
+  <div class="wave-wrapper">
+    <svg class="header-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path fill="#17296d" d="M0,64L60,64C120,64,240,64,360,90.7C480,117,600,171,720,170.7C840,171,960,117,1080,106.7C1200,96,1320,128,1380,144L1440,160L1440,320L0,320Z" />
+    </svg>
+  </div>
 
   <main>
     <div class="container">
-
       <section class="intro-section">
         <div class="text-content">
           <h1>Hey! Willkommen bei TrinkFit!</h1>
@@ -107,25 +37,43 @@ fetch('etl/chart_data.php')
             <li>Warte 10 Sekunden und folge den Anweisungen auf dem Display</li>
             <li>Stelle dein volles Glas auf das TrinkFit Pad</li>
             <li>Trinke aus dem Glas und stelle es immer wieder zurück auf das TrinkFit Pad</li>
-            <li>Glas leer getrunken? Nimm das Glas vom TrinkFit Pad und stelle das TrinkFit Pad mit dem Knopf wieder auf Tara. Nach 10&nbsp;Sekunden ist das TrinkFit Pad wieder einsatzfähig.</li>
+            <li>Glas leer getrunken? Nimm das Glas vom TrinkFit Pad und stelle das TrinkFit Pad mit dem Knopf wieder auf Tara.</li>
             <li>Beobachte deinen Fortschritt hier online und <strong>trink dich fit</strong>.</li>
           </ol>
           <p class="note">Hinweis: Falsche Messdaten oder Fehlermeldung auf dem Display? Einfach den Tara-Button drücken und so das TrinkFit Pad neu starten.</p>
         </div>
         <div class="image-content">
-          <img src="/images/Trink_Fit_Pad.png" alt="TrinkFit Pad mit Wasserglas">
+          <img src="images/Trink_Fit_Pad.png" alt="TrinkFit Pad mit Wasserglas" />
         </div>
       </section>
-      <canvas id="wochenChart" width="800" height="400"></canvas>
 
-      <!-- Tipp-Box als Seitenleiste -->
+      <!-- Umschaltbuttons -->
+      <div class="chart-toggle">
+        <button id="btn-week" class="active">Wochenverlauf</button>
+        <button id="btn-day">Tagesverlauf</button>
+      </div>
+
+      <!-- Fortschrittsbalken -->
+      <div class="trinkfortschritt-box hidden">
+  <div class="trinkfortschritt">
+    <div class="trinkfortschritt-fill" id="trinkFill"></div>
+  </div>
+  <p id="trinkInfo">0 L von 2 L getrunken</p>
+</div>
+
+
+      <!-- Diagramme -->
+      <canvas id="wochenChart" width="600" height="300"></canvas>
+      <canvas id="tagesChart" width="600" height="300" style="display: none;"></canvas>
+
+      <!-- Tipp -->
       <aside class="tip-box">
         <h3>TrinkFit Tipp!</h3>
         <p>Keine Lust auf Wasser? Verdünnte Fruchtsäfte oder ungesüsster Tee bringen Abwechslung!</p>
-        <img src="images/Logo_Trink_Fit_transparent.png" alt="TrinkFit Logo" width="100px" margin="0 auto">
+        <img src="images/Logo_Trink_Fit_transparent.png" alt="TrinkFit Logo" width="100px" />
       </aside>
 
-      <!-- Vorteile-Box -->
+      <!-- Vorteile -->
       <section class="advantages">
         <h2>Gesundheitliche Vorteile von genügend Wasser-Trinken</h2>
         <ul>
@@ -140,7 +88,7 @@ fetch('etl/chart_data.php')
       </section>
     </div>
 
-    <!-- Wellen-SVG am Übergang zum Footer -->
+    <!-- Welle vor Footer -->
     <svg class="footer-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 80" preserveAspectRatio="none">
       <path d="M0,0 Q600,80 1200,0 L1200,80 L0,80 Z" fill="#17296d"></path>
     </svg>
@@ -151,11 +99,13 @@ fetch('etl/chart_data.php')
       <p>Copyright 2025 – Milena Stadelmann &amp; Wanaka Ermenegger (mmp23cv IM4)</p>
     </div>
   </footer>
-  <!-- Chart.js-Bibliothek -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<!-- Dein externes Chart-Skript -->
-<script src="scripts/wochenChart.js"></script>
+
+  <!-- Chart.js-Bibliothek -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Dein eigenes JS -->
+  <script src="scripts/chart.js"></script>
 
 </body>
 </html>
