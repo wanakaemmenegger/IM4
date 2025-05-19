@@ -17,17 +17,6 @@ Die Idee basiert auf der Beobachtung, dass viele Menschen zu wenig trinken – b
 
 TrinkFit erkennt Trinkvorgänge automatisch und bietet Feedback über Lichtsignale (LED-Ring) und ein OLED-Display. Zusätzlich werden die Daten an eine Online-Datenbank übertragen und anschliessend auf seiner Website grafisch aufbereitet.
 
-Diese Funktionen hat das Trinkfit-Pad kurz zusammengefasst:
-- Automatische Erkennung von Trinkmengen (via HX711-Wägezelle)
-- OLED-Anzeige mit Status- und Bedienhinweisen
-- LED-Ring für visuelles Feedback:
-  - Startanimation bei Inbetriebnahme
-  - Erinnerung nach Inaktivität (animierter Farbwechsel)
-  - Erfolgssignal nach Trinkvorgang (grün)
-  - Fehlerhinweis bei fehlgeschlagener Messung (rot)
-- Datenübertragung an eine Online-Datenbank
-- Visualisierung der Daten auf einer externen Website
-
 ---
 
 ## ⚙️ So wird das TrinkFit-Pad bedient:
@@ -41,10 +30,22 @@ Diese Funktionen hat das Trinkfit-Pad kurz zusammengefasst:
 7. Vergessen zu trinken? Mit einem Blinken erinnert dich das TrinkFit Pad nach zwei Stunden daran. Sobald du trinkst, hört es wieder auf.
 
 Eine detaillierte Bedienungsanleitung mit zusätzlichen Anmerkungen und Ergänzungen ist unter folgendem Link zu finden:
+https://docs.google.com/document/d/1XEH3uDcnz3PhZMaaVluLnOC8TfT7FdvxlLkdgI5IRxk/edit?usp=sharing
 
 ---
 
 ## 🔧 Technik & Hardware
+
+Diese technischen Funktionen hat unser TrinkFit Pad:
+- Automatische Erkennung von Trinkmengen (via HX711-Wägezelle)
+- OLED-Anzeige mit Status- und Bedienhinweisen
+- LED-Ring für visuelles Feedback:
+  - Startanimation bei Inbetriebnahme
+  - Erinnerung nach Inaktivität (animierter Farbwechsel)
+  - Erfolgssignal nach Trinkvorgang (grün)
+  - Fehlerhinweis bei fehlgeschlagener Messung (rot)
+- Datenübertragung an eine Online-Datenbank
+- Visualisierung der Daten auf einer externen Website
 
 Komponenten und ihre Funktion:
 
