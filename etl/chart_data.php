@@ -1,39 +1,45 @@
 <?php
 require_once("db_config.php");
+header('Content-Type: application/json');
 
 try {
-  $pdo = new PDO($dsn, $db_user, $db_pass, $options);
-} catch(PDOException $e){
-  http_response_code(500);
-  echo json_encode(["error" => "DB-Verbindung fehlgeschlagen"]);
-  exit;
+    $pdo = new PDO($dsn, $db_user, $db_pass, $options);
+} catch (PDOException $e) {
+    echo json_encode(["status" => "error", "message" => "DB connection failed"]);
+    exit;
 }
 
-// Aggregiere Trinkmenge nach Wochentag (0=So ... 6=Sa)
+// Daten der letzten 7 Tage holen
 $sql = "
   SELECT 
-    DATE_FORMAT(timestamp, '%w') AS wochentag_num,
-    DATE_FORMAT(timestamp, '%a') AS wochentag,
-    ROUND(SUM(wert)/1000, 2) AS summe
+    DATE(zeit) as datum,
+    DATE_FORMAT(zeit, '%a') as wochentag,
+    ROUND(SUM(wert)/1000, 2) as summe
   FROM sensordata
-  WHERE timestamp >= DATE_SUB(NOW(), INTERVAL 7 DAY)
-  GROUP BY wochentag_num
-  ORDER BY wochentag_num ASC
+  WHERE zeit >= CURDATE() - INTERVAL 6 DAY
+  GROUP BY DATE(zeit)
+  ORDER BY DATE(zeit)
 ";
+
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
-$data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-// Wochentage auffüllen, falls nicht alle vorhanden sind
-$tage = ['So','Mo','Di','Mi','Do','Fr','Sa'];
-$vollständig = [];
-foreach ($tage as $index => $tag) {
-  $match = array_values(array_filter($data, fn($d) => $d['wochentag_num'] == $index));
-  $vollständig[] = [
-    'wochentag' => strtoupper($tag),
-    'summe' => $match[0]['summe'] ?? 0
-  ];
+// Heute:
+$heute = date('Y-m-d');
+
+// Alle 7 Tage erzeugen (letzte 6 + heute)
+$daten = [];
+for ($i = 6; $i >= 0; $i--) {
+    $datum = date('Y-m-d', strtotime("-$i day"));
+    $match = array_filter($rows, fn($d) => $d['datum'] === $datum);
+    $eintrag = array_values($match)[0] ?? null;
+
+    $daten[] = [
+        'wochentag' => strtoupper(date('D', strtotime($datum))),
+        'summe' => $eintrag['summe'] ?? 0,
+        'is_today' => $datum === $heute
+    ];
 }
 
-header('Content-Type: application/json');
-echo json_encode($vollständig);
+echo json_encode($daten);
