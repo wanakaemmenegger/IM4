@@ -90,12 +90,15 @@ h1, h2, h3 {
   color: #17296d;
   border: 2px solid transparent;
   cursor: pointer;
+  font-size: 12pt;
 }
 
 .chart-toggle button.active {
   background: white;
   border: 2px solid #edc643;
 }
+
+
 
 /* Tipp-Box (Aside) Styles */
 aside.tip-box {
@@ -164,6 +167,42 @@ aside.tip-box p {
   display: none;
 }
 
+.trink-statistik {
+  margin: 2em 0 1em;
+  text-align: left;
+  color: #17296d;
+}
+
+.trink-statistik h2 {
+  margin-bottom: 0.5em;
+}
+
+#trinkSummary {
+  font-weight: bold;
+}
+
+.statistik-labels {
+  display: flex;
+  gap: 1em;
+  margin-top: 0.5em;
+  flex-wrap: wrap;
+}
+
+#datumBox {
+  background-color: #17296d;
+  color: #EDC643;
+  font-weight: bold;
+  padding: 0.4em 1em;
+  border-radius: 4px;
+}
+
+#zielBox {
+  background-color: #EDC643;
+  color: #17296d;
+  font-weight: bold;
+  padding: 0.4em 1em;
+  border-radius: 4px;
+}
 
 
 /* Footer Styles */
@@ -224,4 +263,50 @@ footer p {
     justify-content: center;
     padding: 20px;
   }
+.chart-tip-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  align-items: flex-start;
+  margin: 2em 0;
 }
+
+.chart-area {
+  flex: 2;
+  min-width: 300px;
+}
+
+.tip-box {
+  flex: 1;
+  background: #17296d;
+  color: #ffffff;
+  padding: 2em;
+  border-radius: 30px;
+  font-family: 'Roboto', sans-serif;
+  max-width: 320px;
+}
+
+.tip-box h3 {
+  font-family: 'oso-sans', sans-serif;
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.tip-box p {
+  font-size: 1em;
+  margin: 0.5em 0;
+}
+
+.tip-box strong {
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .chart-tip-wrapper {
+    flex-direction: column;
+  }
+
+  .tip-box {
+    max-width: 100%;
+  }
+}}
