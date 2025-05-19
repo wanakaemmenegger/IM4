@@ -17,10 +17,7 @@ Die Idee basiert auf der Beobachtung, dass viele Menschen zu wenig trinken – b
 
 TrinkFit erkennt Trinkvorgänge automatisch und bietet Feedback über Lichtsignale (LED-Ring) und ein OLED-Display. Zusätzlich werden die Daten an eine Online-Datenbank übertragen und anschliessend auf seiner Website grafisch aufbereitet.
 
----
-
-## ⚙️ So funktioniert das TrinkFit-Pad:
-
+Diese Funktionen hat das Trinkfit-Pad kurz zusammengefasst:
 - Automatische Erkennung von Trinkmengen (via HX711-Wägezelle)
 - OLED-Anzeige mit Status- und Bedienhinweisen
 - LED-Ring für visuelles Feedback:
@@ -31,7 +28,19 @@ TrinkFit erkennt Trinkvorgänge automatisch und bietet Feedback über Lichtsigna
 - Datenübertragung an eine Online-Datenbank
 - Visualisierung der Daten auf einer externen Website
 
-Eine detaillierte Bedienungsanleitung ist unter folgendem Link zu finden:
+---
+
+## ⚙️ So wird das TrinkFit-Pad bedient:
+
+1. Schliesse das TrinkFit Pad am Strom an und starte es.
+2. Warte 10 Sekunden und folge den Anweisungen auf dem Display. 
+3. Stelle dein volles Glas auf das TrinkFit Pad. 
+4. Trinke aus dem Glas und stelle es immer wieder zurück auf das TrinkFit Pad.
+5. Glas leer getrunken? Fülle es einfach wieder auf oder nimm das Glas vom TrinkFit Pad und stelle es mit dem Knopf wieder auf Tara. Nach 10 Sekunden ist das TrinkFit Pad wieder einsatzfähig.
+6. Beobachte deinen Fortschritt hier online und trink dich fit.
+7. Vergessen zu trinken? Mit einem Blinken erinnert dich das TrinkFit Pad nach zwei Stunden daran. Sobald du trinkst, hört es wieder auf.
+
+Eine detaillierte Bedienungsanleitung mit zusätzlichen Anmerkungen und Ergänzungen ist unter folgendem Link zu finden:
 
 ---
 
