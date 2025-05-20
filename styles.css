@@ -239,7 +239,7 @@ aside.tip-box p {
   flex-direction: column;
   justify-content: space-between;
   text-align: center;
-  align-items: centers;
+  align-items: center;
 }
 
 .tip-box h3 {

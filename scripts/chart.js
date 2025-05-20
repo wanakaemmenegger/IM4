@@ -64,7 +64,7 @@ fetch('etl/chart_data.php')
         },
         options: {
           responsive: true,
-         scales: {
+          scales: {
             y: {
               beginAtZero: true,
               max: 3,
@@ -72,7 +72,7 @@ fetch('etl/chart_data.php')
                 stepSize: 0.5
               },
               grid: {
-                display: false,
+                display: false
               }
             },
             x: {
@@ -127,6 +127,11 @@ document.getElementById('btn-week')?.addEventListener('click', () => {
   document.getElementById('btn-week').classList.add('active');
   document.getElementById('btn-day').classList.remove('active');
   document.querySelector('.trinkfortschritt-box')?.classList.add('hidden');
+
+  // Entferne die Tagesmodus-Klasse, damit Chart-Area normal bleibt
+  document.querySelector('.chart-area').classList.remove('tagesmodus');
+
+  console.log('Wochenchart aktiv, Tagesmodus entfernt:', document.querySelector('.chart-area').classList);
 });
 
 document.getElementById('btn-day')?.addEventListener('click', () => {
@@ -135,16 +140,19 @@ document.getElementById('btn-day')?.addEventListener('click', () => {
   document.getElementById('btn-week').classList.remove('active');
   document.getElementById('btn-day').classList.add('active');
 
+  // Tagesmodus-Klasse hinzufügen, damit die Höhe angepasst wird
+  document.querySelector('.chart-area').classList.add('tagesmodus');
+
   const fill = document.getElementById('trinkFill');
-  const info = document.getElementById('trinkInfo');
   const box = document.querySelector('.trinkfortschritt-box');
 
-  if (fill && info && gespeicherteDaten?.heute) {
+  if (fill && gespeicherteDaten?.heute) {
     const menge = parseFloat(gespeicherteDaten.heute.menge);
     const ziel = parseFloat(gespeicherteDaten.heute.ziel);
     const prozent = Math.min(100, (menge / ziel) * 100);
     fill.style.width = prozent + '%';
-    info.textContent = `${menge} L von ${ziel} L getrunken`;
     box?.classList.remove('hidden');
   }
+
+  console.log('Tageschart aktiv, Tagesmodus gesetzt:', document.querySelector('.chart-area').classList);
 });
