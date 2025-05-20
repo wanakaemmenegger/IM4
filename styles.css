@@ -21,13 +21,27 @@ h1, h2, h3 {
   padding: 0 1em;
 }
 
-/* Header mit Logos und Welle */
+/* Header ohne Welle - blau hinterlegt */
 .site-header {
-  background: #17296d;
-  padding: 40px 40px 80px;
+  position: relative;
+  background: #17296d; /* Blau statt Welle */
+  padding: 40px 40px 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  color: white;
+  min-height: 140px;
+}
+
+/* Container für Logos und Text im Header */
+.header-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 1em;
 }
 
 .logo-img {
@@ -38,17 +52,6 @@ h1, h2, h3 {
 .logo-text {
   height: 80px;
   display: block;
-}
-
-.wave-wrapper {
-  position: relative;
-  top: -1px;
-}
-
-.header-wave {
-  display: block;
-  width: 100%;
-  height: auto;
 }
 
 /* Hauptbereich Styles */
@@ -95,7 +98,7 @@ h1, h2, h3 {
 
 .chart-toggle button.active {
   background: white;
-  border: 2px solid #edc643;
+  border: 2px solid #F5C400;
 }
 
 /* Tipp-Box (Aside) Styles */
@@ -117,7 +120,7 @@ aside.tip-box p {
 
 /* Vorteile-Box Styles */
 .advantages {
-  background: #EDC643;
+  background: #F5C400; 
   font-weight: bold;
   color: #ffffff;
   padding: 2em 10em;
@@ -160,6 +163,7 @@ aside.tip-box p {
   border-radius: 999px 0 0 999px;
   transition: width 1s ease;
 }
+
 #trinkInfo {
   display: none;
 }
@@ -191,14 +195,14 @@ aside.tip-box p {
 
 #datumBox {
   background-color: #17296d;
-  color: #EDC643;
+  color: #F5C400;
   font-weight: bold;
   padding: 0.4em 1em;
   border-radius: 4px;
 }
 
 #zielBox {
-  background-color: #EDC643;
+  background-color: #F5C400;
   color: #17296d;
   font-weight: bold;
   padding: 0.4em 1em;
@@ -257,17 +261,20 @@ aside.tip-box p {
   font-weight: bold;
 }
 
-/* Footer Styles */
+/* Footer ohne Welle - blau hinterlegt */
 footer {
-  background: #17296d;
-  color: #ffffff;
+  position: relative;
+  background: #17296d; /* Blau statt Welle */
+  color: white;
   text-align: center;
   padding: 40px 1em 20px;
+  min-height: 140px;
 }
 
-footer p {
-  margin: 0;
-  font-size: 0.9em;
+/* Footer Inhalt */
+.footer-content {
+  position: relative;
+  z-index: 10;
 }
 
 /* Responsive Design: ab 768px Breite mehrspaltig */
@@ -290,7 +297,7 @@ footer p {
   }
 
   .advantages {
-    padding: 1em 3em;
+    padding: 2em 7em;
   }
 }
 
@@ -324,5 +331,9 @@ footer p {
   .site-header {
     justify-content: center;
     padding: 20px;
+  }
+
+    .advantages {
+    padding: 2em 3em;
   }
 }

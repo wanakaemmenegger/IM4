@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>TrinkFit</title>
 
   <!-- Fonts -->
@@ -15,15 +15,11 @@
 
 <body>
   <header class="site-header">
-    <img src="images/Logo_Trink_Fit_transparent.png" alt="TrinkFit Logo" class="logo-img" />
-    <img src="images/Logo_Trink_Fit-03_transparent.png" alt="TrinkFit Schriftzug" class="logo-text" />
+    <div class="header-content">
+      <img src="images/Logo_Trink_Fit_transparent.png" alt="TrinkFit Logo" class="logo-img" />
+      <img src="images/Logo_Trink_Fit-03_transparent.png" alt="TrinkFit Schriftzug" class="logo-text" />
+    </div>
   </header>
-
-  <div class="wave-wrapper">
-    <svg class="header-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-      <path fill="#17296d" d="M0,64L60,64C120,64,240,64,360,90.7C480,117,600,171,720,170.7C840,171,960,117,1080,106.7C1200,96,1320,128,1380,144L1440,160L1440,320L0,320Z" />
-    </svg>
-  </div>
 
   <main>
     <div class="container">
@@ -56,6 +52,7 @@
           <span id="zielBox">–</span>
         </div>
       </div>
+
       <div class="chart-tip-wrapper">
         <div class="chart-area">
           <!-- Umschaltbuttons -->
@@ -83,9 +80,7 @@
           <p id="tip-text">Der Körper nimmt täglich etwa 1 Liter der benötigten Flüssigkeit über Nahrung auf.</p>
           <img src="images/Logo_Trink_Fit_transparent.png" alt="TrinkFit Logo" width="80px" style="margin-top: 1em;" />
         </aside>
-
       </div>
-
 
       <!-- Vorteile -->
       <section class="advantages">
@@ -101,16 +96,11 @@
         </ul>
       </section>
     </div>
-
-    <!-- Welle vor Footer -->
-    <svg class="footer-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 80" preserveAspectRatio="none">
-      <path d="M0,0 Q600,80 1200,0 L1200,80 L0,80 Z" fill="#17296d"></path>
-    </svg>
   </main>
 
   <footer>
-    <div class="container">
-      <p>Copyright 2025 – Milena Stadelmann &amp; Wanaka Ermenegger (mmp23cv IM4)</p>
+    <div class="footer-content container">
+      <p>Copyright 2025 – Milena Stadelmann &amp; Wanaka Ermenegger (mmp23cv IM4)</p>
     </div>
   </footer>
 
@@ -120,6 +110,5 @@
   <!-- Dein eigenes JS -->
   <script src="scripts/chart.js"></script>
   <script src="scripts/tipps.js"></script>
-
 </body>
 </html>

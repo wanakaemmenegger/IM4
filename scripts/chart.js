@@ -1,4 +1,6 @@
-let gespeicherteDaten = null; // globale Variable
+let gespeicherteDaten = null;
+let wochenChart = null;
+let gradient = null;
 
 fetch('etl/chart_data.php')
   .then(response => response.json())
@@ -25,20 +27,12 @@ fetch('etl/chart_data.php')
     }
 
     // === Wochenchart anzeigen ===
-    const ctx = document.getElementById('wochenChart')?.getContext('2d');
-    if (ctx && data.wochenverlauf) {
+    const ctxWochen = document.getElementById('wochenChart')?.getContext('2d');
+    if (ctxWochen && data.wochenverlauf && data.heute) {
       const labels = data.wochenverlauf.map(e => e.wochentag);
       const werte = data.wochenverlauf.map(e => parseFloat(e.summe));
 
-      const gradient = ctx.createLinearGradient(0, 0, 0, 300);
-      gradient.addColorStop(0, '#2f3d7e');
-      gradient.addColorStop(1, '#17296d');
-
-      const farben = data.wochenverlauf.map(e =>
-        e.is_today ? '#EDC643' : gradient
-      );
-
-      new Chart(ctx, {
+      wochenChart = new Chart(ctxWochen, {
         type: 'bar',
         data: {
           labels: labels,
@@ -46,7 +40,7 @@ fetch('etl/chart_data.php')
             {
               label: 'Getrunken (L)',
               data: werte,
-              backgroundColor: farben,
+              backgroundColor: '#F5C400', // initial einfarbig
               borderRadius: 20,
               borderSkipped: false
             },
@@ -54,7 +48,7 @@ fetch('etl/chart_data.php')
               label: 'Dein täglicher Trinkbedarf',
               data: new Array(labels.length).fill(parseFloat(data.heute.ziel)),
               type: 'line',
-              borderColor: '#edc643',
+              borderColor: '#F5C400',
               borderWidth: 4,
               pointRadius: 0,
               pointHoverRadius: 0,
@@ -68,30 +62,22 @@ fetch('etl/chart_data.php')
             y: {
               beginAtZero: true,
               max: 3,
-              ticks: {
-                stepSize: 0.5
-              },
-              grid: {
-                display: false
-              }
+              ticks: { stepSize: 0.5 },
+              grid: { display: false }
             },
             x: {
-              grid: {
-                display: false
-              }
+              grid: { display: false }
             }
           },
           elements: {
-            bar: {
-              borderRadius: Number.MAX_VALUE
-            }
+            bar: { borderRadius: Number.MAX_VALUE }
           },
           plugins: {
             tooltip: { enabled: false },
             legend: {
               position: 'bottom',
               labels: {
-                generateLabels: function (chart) {
+                generateLabels(chart) {
                   const datasets = chart.data.datasets;
                   const line = datasets.find(ds => ds.label === 'Dein täglicher Trinkbedarf');
                   return line ? [{
@@ -106,19 +92,81 @@ fetch('etl/chart_data.php')
                 },
                 usePointStyle: true,
                 boxWidth: 20,
-                font: {
-                  family: 'Roboto',
-                  size: 14
-                },
+                font: { family: 'Roboto', size: 14 },
                 color: '#17296d'
               }
             }
+          }
+        },
+        plugins: [{
+          id: 'applyGradient',
+          afterLayout(chart) {
+            const {ctx, chartArea} = chart;
+            if (!chartArea) return;
+
+            if (!gradient) {
+              gradient = ctx.createLinearGradient(0, chartArea.bottom, 0, chartArea.top);
+              gradient.addColorStop(0, '#17296d');
+              gradient.addColorStop(1, '#2f3d7e');
+            }
+
+            const dataset = chart.data.datasets[0];
+            dataset.backgroundColor = dataset.data.map((_, i) =>
+              data.wochenverlauf[i].is_today ? '#F5C400' : gradient
+            );
+          }
+        }]
+      });
+    }
+
+    // === Tageschart anzeigen ===
+    const ctxTages = document.getElementById('tagesChart')?.getContext('2d');
+    if (ctxTages && data.tagesverlauf && data.heute) {
+      const labels = data.tagesverlauf.map(e => e.zeit);
+      const werte = data.tagesverlauf.map(e => parseFloat(e.menge));
+
+      const gradientDay = ctxTages.createLinearGradient(0, 300, 0, 0);
+      gradientDay.addColorStop(0, '#17296d');
+      gradientDay.addColorStop(1, '#2f3d7e');
+
+      const tagesChart = new Chart(ctxTages, {
+        type: 'bar',
+        data: {
+          labels: labels,
+          datasets: [{
+            label: 'Getrunken (L)',
+            data: werte,
+            backgroundColor: gradientDay,
+            borderRadius: 20,
+            borderSkipped: false
+          }]
+        },
+        options: {
+          responsive: true,
+          scales: {
+            y: {
+              beginAtZero: true,
+              max: 0.5,
+              ticks: { stepSize: 0.1 },
+              grid: { display: false }
+            },
+            x: {
+              grid: { display: false }
+            }
+          },
+          elements: {
+            bar: { borderRadius: Number.MAX_VALUE }
+          },
+          plugins: {
+            tooltip: { enabled: false },
+            legend: { display: false }
           }
         }
       });
     }
   })
   .catch(err => console.error('Fehler beim Laden der Daten:', err));
+
 
 // === Umschaltbuttons ===
 document.getElementById('btn-week')?.addEventListener('click', () => {
@@ -127,10 +175,7 @@ document.getElementById('btn-week')?.addEventListener('click', () => {
   document.getElementById('btn-week').classList.add('active');
   document.getElementById('btn-day').classList.remove('active');
   document.querySelector('.trinkfortschritt-box')?.classList.add('hidden');
-
-  // Entferne die Tagesmodus-Klasse, damit Chart-Area normal bleibt
   document.querySelector('.chart-area').classList.remove('tagesmodus');
-
   console.log('Wochenchart aktiv, Tagesmodus entfernt:', document.querySelector('.chart-area').classList);
 });
 
@@ -139,13 +184,10 @@ document.getElementById('btn-day')?.addEventListener('click', () => {
   document.getElementById('tagesChart').style.display = 'block';
   document.getElementById('btn-week').classList.remove('active');
   document.getElementById('btn-day').classList.add('active');
-
-  // Tagesmodus-Klasse hinzufügen, damit die Höhe angepasst wird
   document.querySelector('.chart-area').classList.add('tagesmodus');
 
   const fill = document.getElementById('trinkFill');
   const box = document.querySelector('.trinkfortschritt-box');
-
   if (fill && gespeicherteDaten?.heute) {
     const menge = parseFloat(gespeicherteDaten.heute.menge);
     const ziel = parseFloat(gespeicherteDaten.heute.ziel);
@@ -153,6 +195,5 @@ document.getElementById('btn-day')?.addEventListener('click', () => {
     fill.style.width = prozent + '%';
     box?.classList.remove('hidden');
   }
-
   console.log('Tageschart aktiv, Tagesmodus gesetzt:', document.querySelector('.chart-area').classList);
 });
