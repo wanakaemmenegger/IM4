@@ -160,6 +160,9 @@ aside.tip-box p {
   border-radius: 999px 0 0 999px;
   transition: width 1s ease;
 }
+#trinkInfo {
+  display: none;
+}
 
 .hidden {
   display: none;
@@ -205,15 +208,22 @@ aside.tip-box p {
 /* Diagramm + Tipp nebeneinander */
 .chart-tip-wrapper {
   display: flex;
-  gap: 2em;
-  align-items: flex-start;
   flex-wrap: wrap;
+  gap: 2em;
+  align-items: stretch;
   margin: 2em 0;
 }
 
 .chart-area {
   flex: 2;
   min-width: 300px;
+  overflow-x: auto;
+}
+
+.chart-area canvas {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 .tip-box {
@@ -223,7 +233,13 @@ aside.tip-box p {
   padding: 2em;
   border-radius: 30px;
   font-family: 'Roboto', sans-serif;
-  max-width: 200px;
+  max-width: 20%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  align-items: centers;
 }
 
 .tip-box h3 {
@@ -278,7 +294,23 @@ footer p {
   }
 }
 
-/* Mobile: Nur Textlogo anzeigen + Layout Umbruch */
+/* Optimiertes Layout für Tablets und kleinere Screens */
+@media (max-width: 1023px) {
+  .chart-tip-wrapper {
+    flex-direction: column;
+  }
+
+  .tip-box {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .chart-area {
+    width: 100%;
+  }
+}
+
+/* Mobile: Nur Textlogo anzeigen */
 @media (max-width: 768px) {
   .logo-img {
     display: none;
@@ -292,13 +324,5 @@ footer p {
   .site-header {
     justify-content: center;
     padding: 20px;
-  }
-
-  .chart-tip-wrapper {
-    flex-direction: column;
-  }
-
-  .tip-box {
-    max-width: 100%;
   }
 }

@@ -72,7 +72,7 @@ fetch('etl/chart_data.php')
                 stepSize: 0.5
               },
               grid: {
-                display: false
+                display: false,
               }
             },
             x: {
