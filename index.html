@@ -47,31 +47,49 @@
         </div>
       </section>
 
-      <!-- Umschaltbuttons -->
-      <div class="chart-toggle">
-        <button id="btn-week" class="active">Wochenverlauf</button>
-        <button id="btn-day">Tagesverlauf</button>
+      <!-- Trinkstatistik -->
+      <div class="trink-statistik">
+        <h2>Deine TrinkFit Statistik</h2>
+        <p id="trinkSummary">Lade Statistik...</p>
+        <div class="statistik-labels">
+          <span id="datumBox">–</span>
+          <span id="zielBox">–</span>
+        </div>
       </div>
 
-      <!-- Fortschrittsbalken -->
-      <div class="trinkfortschritt-box hidden">
-  <div class="trinkfortschritt">
-    <div class="trinkfortschritt-fill" id="trinkFill"></div>
-  </div>
-  <p id="trinkInfo">0 L von 2 L getrunken</p>
-</div>
+      <!-- Diagramm + Tipp nebeneinander -->
+      <div class="chart-tip-wrapper">
+        <div class="chart-area">
+          <!-- Umschaltbuttons -->
+          <div class="chart-toggle">
+            <button id="btn-week" class="active">Wochenverlauf</button>
+            <button id="btn-day">Tagesverlauf</button>
+          </div>
 
+          <!-- Fortschrittsbalken -->
+          <div class="trinkfortschritt-box hidden">
+            <div class="trinkfortschritt">
+              <div class="trinkfortschritt-fill" id="trinkFill"></div>
+            </div>
+            <p id="trinkInfo"></p>
+          </div>
 
-      <!-- Diagramme -->
-      <canvas id="wochenChart" width="600" height="300"></canvas>
-      <canvas id="tagesChart" width="600" height="300" style="display: none;"></canvas>
+          <!-- Diagramme -->
+        <div class="chart-tip-wrapper">
+        <div class="chart-area">
+          <canvas id="wochenChart" width="600" height="300"></canvas>
+          <canvas id="tagesChart" width="600" height="300" style="display: none;"></canvas>
+        </div>
 
-      <!-- Tipp -->
-      <aside class="tip-box">
-        <h3>TrinkFit Tipp!</h3>
-        <p>Keine Lust auf Wasser? Verdünnte Fruchtsäfte oder ungesüsster Tee bringen Abwechslung!</p>
-        <img src="images/Logo_Trink_Fit_transparent.png" alt="TrinkFit Logo" width="100px" />
-      </aside>
+        <aside class="tip-box">
+          <h3>TrinkFit Tipp!</h3>
+          <p><strong>Flüssigkeit via Ernährung?</strong></p>
+          <p>Der Körper nimmt täglich etwa 1 Liter der benötigten Flüssigkeit über Nahrung auf.</p>
+          <img src="images/Logo_Trink_Fit_transparent.png" alt="TrinkFit Logo" width="80px" style="margin-top: 1em;" />
+        </aside>
+      </div>
+
+      
 
       <!-- Vorteile -->
       <section class="advantages">
@@ -100,12 +118,10 @@
     </div>
   </footer>
 
-
   <!-- Chart.js-Bibliothek -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <!-- Dein eigenes JS -->
   <script src="scripts/chart.js"></script>
-
 </body>
 </html>
