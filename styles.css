@@ -98,8 +98,6 @@ h1, h2, h3 {
   border: 2px solid #edc643;
 }
 
-
-
 /* Tipp-Box (Aside) Styles */
 aside.tip-box {
   background: #17296d;
@@ -204,6 +202,44 @@ aside.tip-box p {
   border-radius: 4px;
 }
 
+/* Diagramm + Tipp nebeneinander */
+.chart-tip-wrapper {
+  display: flex;
+  gap: 2em;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin: 2em 0;
+}
+
+.chart-area {
+  flex: 2;
+  min-width: 300px;
+}
+
+.tip-box {
+  flex: 1;
+  background: #17296d;
+  color: #ffffff;
+  padding: 2em;
+  border-radius: 30px;
+  font-family: 'Roboto', sans-serif;
+  max-width: 200px;
+}
+
+.tip-box h3 {
+  font-family: 'oso-sans', sans-serif;
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.tip-box p {
+  font-size: 1em;
+  margin: 0.5em 0;
+}
+
+.tip-box strong {
+  font-weight: bold;
+}
 
 /* Footer Styles */
 footer {
@@ -237,19 +273,13 @@ footer p {
     width: 35%;
   }
 
-  aside.tip-box {
-    float: right;
-    width: 250px;
-    margin: 2em 0 2em 2em;
-  }
-
   .advantages {
     padding: 1em 3em;
   }
 }
 
-/* Mobile: Nur Textlogo anzeigen */
-@media (max-width: 767px) {
+/* Mobile: Nur Textlogo anzeigen + Layout Umbruch */
+@media (max-width: 768px) {
   .logo-img {
     display: none;
   }
@@ -263,45 +293,7 @@ footer p {
     justify-content: center;
     padding: 20px;
   }
-.chart-tip-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2em;
-  align-items: flex-start;
-  margin: 2em 0;
-}
 
-.chart-area {
-  flex: 2;
-  min-width: 300px;
-}
-
-.tip-box {
-  flex: 1;
-  background: #17296d;
-  color: #ffffff;
-  padding: 2em;
-  border-radius: 30px;
-  font-family: 'Roboto', sans-serif;
-  max-width: 320px;
-}
-
-.tip-box h3 {
-  font-family: 'oso-sans', sans-serif;
-  font-size: 1.5em;
-  margin-bottom: 0.5em;
-}
-
-.tip-box p {
-  font-size: 1em;
-  margin: 0.5em 0;
-}
-
-.tip-box strong {
-  font-weight: bold;
-}
-
-@media (max-width: 768px) {
   .chart-tip-wrapper {
     flex-direction: column;
   }
@@ -309,4 +301,4 @@ footer p {
   .tip-box {
     max-width: 100%;
   }
-}}
+}
