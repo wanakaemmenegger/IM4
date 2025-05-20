@@ -66,7 +66,8 @@ Schaltplan und Aufbau:
 - LED-Ring → D5 (Data In)
 - Stromversorgung aller Komponenten über 3.3 V (vom ESP32)
 
-Unter diesem Link ist eine detaillierte Schritt-für-Schritt-Anleitung abgespeichert, um das Projekt nachzubauen (inklusive Komponentenplan, Steckschema und Flussdiagramm): 
+Unter diesem Link ist eine detaillierte Schritt-für-Schritt Bauanleitung abgespeichert, um das Projekt nachzubauen (inklusive Komponentenplan, Steckschema und Flussdiagramm):
+
 
 Direkt zum Komponentenplan:
 Direkt zum Steckschema:
