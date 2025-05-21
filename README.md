@@ -49,17 +49,54 @@ Diese technischen Funktionen hat unser TrinkFit Pad:
 
 Komponenten und ihre Funktion:
 
-| Komponente             | Funktion                                    |
-|------------------------|---------------------------------------------|
-| ESP32 Dev Board        | Mikrocontroller, Steuerung & WLAN           |
-| HX711 + Waage          | Gewichtssensor zur Erkennung der Trinkmenge |
-| SSD1306 OLED Display   | Anzeige von Status und Hinweisen            |
-| LED-Ring WS2812B       | Erinnerung & visuelles Feedback             |
-| Powerbank (5 V)        | Mobile Stromversorgung                      |
+## Komponentenübersicht
 
-Die Komponenten sind auf einem Breadboard verbunden und werden über den **3.3 V-Ausgang des ESP32** versorgt. Das TrinkFit-Pad kann über eine externe Powerbank (USB 5 V) betrieben werden.
+### Hardware
 
-Schaltplan und Aufbau:
+| Komponente             | Funktion                                                       |
+|------------------------|----------------------------------------------------------------|
+| ESP32 Dev Board        | Mikrocontroller, führt Hauptprogramm aus, kommuniziert via WLAN |
+| HX711 + Wägezelle      | Gewichtssensor zur Erkennung der Trinkmenge                    |
+| SSD1306 OLED Display   | Zeigt Hinweise und Statusmeldungen an                         |
+| WS2812B LED-Ring       | Gibt visuelles Feedback (Erinnerung, Erfolg etc.)              |
+| Powerbank (5 V)        | Mobile Stromversorgung über USB                                |
+
+### Protokolle & Verbindungen
+
+| Verbindung / Protokoll | Funktion                                                        |
+|------------------------|-----------------------------------------------------------------|
+| GPIO                   | Datenübertragung zwischen ESP32 und Sensoren (z. B. HX711, LED) |
+| I²C                    | Kommunikation mit dem OLED Display (SDA D20, SCL D21)           |
+| WLAN (WiFi)            | Verbindung des ESP32 mit dem Webserver                          |
+| HTTP (POST)            | Sendet JSON-Daten vom ESP32 an den Server (`load.php`)          |
+| SQL (MySQL)            | Datenübertragung zwischen PHP und Datenbank                     |
+
+### Programmlogik / Steuerung
+
+| Datei / Modul          | Funktion                                                       |
+|------------------------|----------------------------------------------------------------|
+| `mc.ino`               | Arduino-Hauptprogramm: Gewichtsmessung, Anzeige, Logik         |
+| `load.php`             | Serverlogik: Empfängt Daten und schreibt sie in die Datenbank  |
+| `chart_data.php`       | Serverlogik: Stellt gespeicherte Trinkdaten als JSON bereit    |
+| `chart.js`             | Visualisiert Daten auf der Website                             |
+| `tipps.js`             | Zeigt zufällige Trinktipps im Frontend                         |
+
+### Web-Frontend & Konfiguration
+
+| Komponente             | Funktion                                                       |
+|------------------------|----------------------------------------------------------------|
+| `index.html`           | Grundstruktur der Website                                      |
+| `styles.css`           | Visuelles Styling der Website                                  |
+| `db_config.php`        | Stellt Verbindung zur Datenbank her (für PHP)                  |
+| Icons, Media, Favicon  | Statische Inhalte zur Darstellung                              |
+
+
+Die Komponenten sind in Hardware, Protokolle und Software gegliedert und bilden gemeinsam das technische System hinter dem TrinkFit-Pad. Die Programmlogik auf dem ESP32 kommuniziert über WLAN und HTTP mit dem Webserver, wo die Daten gespeichert und anschliessend visualisiert werden. Die Weboberfläche besteht aus HTML, CSS und JavaScript und ruft die Messdaten über PHP-Schnittstellen aus der Datenbank ab.
+
+Direkt zum Komponentenplan:
+
+
+### Schaltplan und Aufbau:
 
 - HX711 → D18 (SCK) und D19 (DT)
 - OLED → D20 (SDA) und D21 (SCL)
@@ -69,7 +106,7 @@ Schaltplan und Aufbau:
 Unter diesem Link ist eine detaillierte Schritt-für-Schritt Bauanleitung abgespeichert, um das Projekt nachzubauen (inklusive Komponentenplan, Steckschema und Flussdiagramm):
 
 
-Direkt zum Komponentenplan:
+
 Direkt zum Steckschema:
 Direkt zum Flussdiagramm:
 
