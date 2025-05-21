@@ -9,6 +9,8 @@ Ziel ist es, eine funktionale und visuell unterstützende Lösung zu entwickeln,
 
 Wie das TrinkfitPad funktioniert sieht man in diesem Video:
 
+Link zu unserer Website: https://trinkfit.wanaka.ch/
+
 ---
 
 ## 💡 Projektidee
@@ -19,7 +21,10 @@ TrinkFit erkennt Trinkvorgänge automatisch und bietet Feedback über Lichtsigna
 
 Unsere Idee haben wir zu Beginn des Projekts in einem Flussdiagramm aufgezeichnet:
 
-Hier Flussdiagramm einbauen.
+Hier Flussdiagramm einbauen:
+
+Link zu unserem Figma-Mockup:
+
 ---
 
 ## ⚙️ So wird das TrinkFit-Pad bedient:
@@ -37,9 +42,10 @@ https://docs.google.com/document/d/1XEH3uDcnz3PhZMaaVluLnOC8TfT7FdvxlLkdgI5IRxk/
 
 ---
 
-## 🔧 Technik & Hardware
+## Technische Umsetzung
 
 Diese technischen Funktionen hat unser TrinkFit Pad:
+
 - Automatische Erkennung von Trinkmengen (via HX711-Wägezelle)
 - OLED-Anzeige mit Status- und Bedienhinweisen
 - LED-Ring für visuelles Feedback:
@@ -50,11 +56,19 @@ Diese technischen Funktionen hat unser TrinkFit Pad:
 - Datenübertragung an eine Online-Datenbank
 - Visualisierung der Daten auf einer externen Website
 
-Komponenten und ihre Funktion:
+Um das umzusetzen waren verschiedene Schritte nötig.
+1. Hardware aufbauen
+2. ESP32 programmieren
+3. Datenbank aufsetzen 
+4. Server aufsetzen 
+5. Website programmieren und veröffentlichen
 
-## Komponentenübersicht
+Unter diesem Link ist eine detaillierte Schritt-für-Schritt Bauanleitung abgespeichert, um das Projekt nachzubauen (inklusive Steckschema): 
+Direkt zum Steckschema:
 
-### Hardware
+## Komponentenübersicht:
+
+Für die Umsetzung unseres Projekt sind folgende Komponenten nötig:
 
 | Komponente             | Funktion                                                       |
 |------------------------|----------------------------------------------------------------|
@@ -64,7 +78,7 @@ Komponenten und ihre Funktion:
 | WS2812B LED-Ring       | Gibt visuelles Feedback (Erinnerung, Erfolg etc.)              |
 | Powerbank (5 V)        | Mobile Stromversorgung über USB                                |
 
-### Protokolle & Verbindungen
+#### Protokolle & Verbindungen
 
 | Verbindung / Protokoll | Funktion                                                        |
 |------------------------|-----------------------------------------------------------------|
@@ -74,7 +88,7 @@ Komponenten und ihre Funktion:
 | HTTP (POST)            | Sendet JSON-Daten vom ESP32 an den Server (`load.php`)          |
 | SQL (MySQL)            | Datenübertragung zwischen PHP und Datenbank                     |
 
-### Programmlogik / Steuerung
+#### Programmlogik / Steuerung
 
 | Datei / Modul          | Funktion                                                       |
 |------------------------|----------------------------------------------------------------|
@@ -84,7 +98,7 @@ Komponenten und ihre Funktion:
 | `chart.js`             | Visualisiert Daten auf der Website                             |
 | `tipps.js`             | Zeigt zufällige Trinktipps im Frontend                         |
 
-### Web-Frontend & Konfiguration
+#### Web-Frontend & Konfiguration
 
 | Komponente             | Funktion                                                       |
 |------------------------|----------------------------------------------------------------|
@@ -97,31 +111,13 @@ Komponenten und ihre Funktion:
 Die Komponenten sind in Hardware, Protokolle und Software gegliedert und bilden gemeinsam das technische System hinter dem TrinkFit-Pad. Die Programmlogik auf dem ESP32 kommuniziert über WLAN und HTTP mit dem Webserver, wo die Daten gespeichert und anschliessend visualisiert werden. Die Weboberfläche besteht aus HTML, CSS und JavaScript und ruft die Messdaten über PHP-Schnittstellen aus der Datenbank ab.
 
 Hier Komponentenplan einfügen
-
-### Schaltplan und Aufbau:
-
-- HX711 → D18 (SCK) und D19 (DT)
-- OLED → D20 (SDA) und D21 (SCL)
-- LED-Ring → D5 (Data In)
-- Stromversorgung aller Komponenten über 3.3 V (vom ESP32)
-
-Unter diesem Link ist eine detaillierte Schritt-für-Schritt Bauanleitung abgespeichert, um das Projekt nachzubauen (inklusive, Steckschema und ):
-
-
-
-Direkt zum Steckschema:
-Direkt zum Flussdiagramm:
-
 ---
 
-## 🛠 Software & Bibliotheken
+### Programmierung
 
-Die Steuerung erfolgt über die **Arduino IDE**. Verwendete Bibliotheken:
+#### Waage
 
-- `Adafruit_GFX`, `Adafruit_SSD1306` – für OLED-Anzeige
-- `HX711` – zur Ansteuerung des Gewichtssensors
-- `Adafruit_NeoPixel` – für LED-Steuerung
-- `WiFi`, `HTTPClient`, `Arduino_JSON` – für WLAN & Datenübertragung
+Das TrinkFit Pad wurde über die **Arduino IDE** programmiert. 
 
 Der Ablauf ist als **Zustandsautomat** implementiert und umfasst die Phasen:
 - Warten auf Glas
@@ -129,40 +125,35 @@ Der Ablauf ist als **Zustandsautomat** implementiert und umfasst die Phasen:
 - Trinken erkannt
 - Erinnerung aktivieren
 
-Die Logik vom Code funktioniert wie folgt:
-
-1. Gerät via USB (z. B. Powerbank) mit Strom versorgen.
-2. Anzeige auf dem Display «Trinkfit startet...» und LED-Startanimation läuft
-3. Im Display erscheint: „Bitte gefülltes Glas hinstellen“.
-4. Glas hinstellen, ggf. Tara drücken.
-5. Bei Entnahme und Rückstellen wird Trinkmenge automatisch erkannt.
-6. Bei Inaktivität (2 Stunden) startet eine LED-Erinnerung.
-7. Getrunkene Menge wird per HTTP an Webserver übermittelt.
-
 Der vollständige Code ist hier zu finden:
+Genauere Erläuterungen zu den Codes sind im Anhang der Schritt-für-Schritt Bauanleitung aufgeführt:
 
----
+#### Website
 
-## 🌐 Datenbank & Visualisierung
+Die Website wurde mit Visual Code programmiert.... noch ergänzen
 
 Die gesendeten Daten werden über eine PHP-API (`load.php`) an eine MySQL-Datenbank übermittelt.  
-Eine separate Website visualisiert die Trinkhistorie grafisch. Mockups und Screenshots sind im Dokumentationsordner enthalten.
+Eine separate Website visualisiert die Trinkhistorie grafisch.
 
-→ [Mockup ansehen](#) *(→ Link zur Figma-Datei oder Screenshot)*  
-→ [Visualisierung (Demo-Link)](#) *(optional)*
-
-Link zu unserer Website: https://trinkfit.wanaka.ch/
+Genauere Erläuterungen zu den Codes sind im Anhang der Schritt-für-Schritt Bauanleitung aufgeführt:
 
 ---
 
 ## ✍️ Umsetzungsprozess & Reflexion
 
 Hier Reflexion ergänzen:
-- verworfene Ideen 
-- Probleme (z.B. db_config.php hochgeladen)
-- Erkenntnisse im Umgang mit Stromversorgung, Kalibrierung
-- Einsatz von KI-Tools zur Codeunterstützung
-- bekannte Bugs und Optimierungspotenzial
+- Planung
+- Aufgabenverteilung
+- Entwicklungsprozess
+- verworfene Lösungsansätze
+- Designentscheidungen
+- Inspiration
+- Fehlschläge und Umplanung (z.B. db_config.php hochgeladen)
+- Challenges
+- Lerneffekte (z.B. Erkenntnisse im Umgang mit Stromversorgung, Kalibrierung)
+- Known Bugs (Optimierungspotenzial)
+- mögliche Erweiterungen für TrinkFit
+- Hilfsmittel (KI erlaubt und erwünscht)
 
 ---
 
