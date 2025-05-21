@@ -17,6 +17,9 @@ Die Idee basiert auf der Beobachtung, dass viele Menschen zu wenig trinken – b
 
 TrinkFit erkennt Trinkvorgänge automatisch und bietet Feedback über Lichtsignale (LED-Ring) und ein OLED-Display. Zusätzlich werden die Daten an eine Online-Datenbank übertragen und anschliessend auf seiner Website grafisch aufbereitet.
 
+Unsere Idee haben wir zu Beginn des Projekts in einem Flussdiagramm aufgezeichnet:
+
+Hier Flussdiagramm einbauen.
 ---
 
 ## ⚙️ So wird das TrinkFit-Pad bedient:
@@ -93,8 +96,7 @@ Komponenten und ihre Funktion:
 
 Die Komponenten sind in Hardware, Protokolle und Software gegliedert und bilden gemeinsam das technische System hinter dem TrinkFit-Pad. Die Programmlogik auf dem ESP32 kommuniziert über WLAN und HTTP mit dem Webserver, wo die Daten gespeichert und anschliessend visualisiert werden. Die Weboberfläche besteht aus HTML, CSS und JavaScript und ruft die Messdaten über PHP-Schnittstellen aus der Datenbank ab.
 
-Direkt zum Komponentenplan:
-
+Hier Komponentenplan einfügen
 
 ### Schaltplan und Aufbau:
 
@@ -103,7 +105,7 @@ Direkt zum Komponentenplan:
 - LED-Ring → D5 (Data In)
 - Stromversorgung aller Komponenten über 3.3 V (vom ESP32)
 
-Unter diesem Link ist eine detaillierte Schritt-für-Schritt Bauanleitung abgespeichert, um das Projekt nachzubauen (inklusive Komponentenplan, Steckschema und Flussdiagramm):
+Unter diesem Link ist eine detaillierte Schritt-für-Schritt Bauanleitung abgespeichert, um das Projekt nachzubauen (inklusive, Steckschema und ):
 
 
 
