@@ -103,6 +103,32 @@
       <p>Copyright 2025 – Milena Stadelmann &amp; Wanaka Ermenegger (mmp23cv IM4)</p>
     </div>
   </footer>
+<!--PopUp-->
+<div id="popup-overlay" class="popup-overlay hidden">
+  <div class="popup-box">
+    <h3><span class="highlight">Deine Angaben</span></h3>
+    <p>Hilf uns mit deinen Angaben deinen persönlichen Wasserbedarf pro Tag zu berechnen.</p>
+
+    <form id="angabenForm">
+      <label for="alter">Alter</label>
+      <div class="input-row">
+        <input type="number" id="alter" name="alter" required value="25" />
+        <span class="unit">Jahre</span>
+      </div>
+
+      <label for="gewicht">Körpergewicht</label>
+      <div class="input-row">
+        <input type="number" id="gewicht" name="gewicht" required value="55" />
+        <span class="unit">KG</span>
+      </div>
+
+      <button type="submit" class="btn-yellow">ANGABEN BESTÄTIGEN</button>
+    </form>
+  </div>
+</div>
+
+
+
 
   <!-- Chart.js-Bibliothek -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -110,5 +136,6 @@
   <!-- Dein eigenes JS -->
   <script src="scripts/chart.js"></script>
   <script src="scripts/tipps.js"></script>
+  <script src="scripts/popup.js"></script>
 </body>
 </html>
