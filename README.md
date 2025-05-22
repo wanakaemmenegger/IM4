@@ -64,7 +64,10 @@ Um das umzusetzen waren verschiedene Schritte nötig.
 5. Website programmieren und veröffentlichen
 
 Unter diesem Link ist eine detaillierte Schritt-für-Schritt Bauanleitung abgespeichert, um das Projekt nachzubauen (inklusive Steckschema): 
-Direkt zum Steckschema:
+
+
+Hier ein Bild vom Steckschema:
+![Steckschema TrinkFit](images/Steckplan Trinkfit.png)
 
 ## Komponentenübersicht:
 
