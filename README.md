@@ -147,7 +147,8 @@ Genauere Erläuterungen zu den Codes sind im Anhang der Schritt-für-Schritt Bau
 Hier Reflexion ergänzen:
 
 #### Planung
-- 
+- Bewusst für LED entschieden und nicht für Ton, da ein Ton zu agressiv wäre.
+
 #### Aufgabenverteilung
 #### Entwicklungsprozess
 #### verworfene Lösungsansätze
