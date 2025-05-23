@@ -145,18 +145,37 @@ Genauere Erläuterungen zu den Codes sind im Anhang der Schritt-für-Schritt Bau
 ## ✍️ Umsetzungsprozess & Reflexion
 
 Hier Reflexion ergänzen:
-- Planung
-- Aufgabenverteilung
-- Entwicklungsprozess
-- verworfene Lösungsansätze
-- Designentscheidungen
-- Inspiration
-- Fehlschläge und Umplanung (z.B. db_config.php hochgeladen)
-- Challenges
-- Lerneffekte (z.B. Erkenntnisse im Umgang mit Stromversorgung, Kalibrierung)
-- Known Bugs (Optimierungspotenzial)
-- mögliche Erweiterungen für TrinkFit
-- Hilfsmittel (KI erlaubt und erwünscht)
+
+#### Planung
+- 
+#### Aufgabenverteilung
+#### Entwicklungsprozess
+#### verworfene Lösungsansätze
+#### Designentscheidungen
+#### Inspiration
+#### Fehlschläge und Umplanung (z.B. db_config.php hochgeladen)
+
+- Beim Anschliessen des Sensors und der anderen Komponenten auf dem Breadboard, kam es gleich zweinmal vermutlich zu einem Kurzschluss, was den Microcontroller zerstört hat. Der Grund war, dass Stromzuflüsse falsch gesteckt wurden, wodurch auf dem Board vermutlich zu viel Strom floss. Zum Glück haben wir von Jan schnell einen Ersatz bekommen. 
+
+- Leider ist auch die erste Waage, die wir auf Alibaba bestellt haben kaputt gegangen. Die Kabelverbindungen am HX711 Sensor lösten sich und da wir keine Erfahrung im Löten haben, konnten wir ihn nicht flicken. Wir haben schliesslich eine stabilere Waage neu bestellt, die nun im Einsatz ist.
+
+- Im Prozess der Datenbankerstellung haben wir einmal ausversehen das Dokument db_config.php auf GitHub geladen, da wir den Namen des Dokuments angepasst, aber es nicht in gitignore geändert haben. Anschliessend haben wir das Dokument über den Task Manager von Visual Codes wieder aus GitHub entfernt. Zudem haben wir das Login und Passwort angepasst, um die Sicherheit zu gewährleisten. 
+
+#### Challenges
+#### Lerneffekte (z.B. Erkenntnisse im Umgang mit Stromversorgung, Kalibrierung)
+#### Known Bugs (Optimierungspotenzial)
+
+- Die Waage ist manchmal fehleranfällig. Insbesondere beim ersten Gebrauch (wenn sie sich mit einem neuen WLAN verbindet), bei einer unruhigen Unterlage oder wenn sie mit einem schweren Trinkgefäss verwendet wird. Zudem driftet die Gewichtsmessung der Waage bei langem Gebrauch ab, wodurch falsche Messergebnisse (Trinkgefäss + Wasser) auf dem Display angezeigt werden. Das hat allerdings keinen Einfluss auf die Messung der Trinkmessung. Durch die eingebauten Sicherheitsmechanismen im Code kommt es so gut wie nie zu falschen Trinkmessungen, die in der Datenbank landen. Zudem sind die Trinkmessungen gemäss unserer Einschätzung bis auf ca. 10ml genau (wir haben die Waage über 3 Wochen lang regelmässig getestet). Daher sind wir mit der Genauigkeit der Waage sehr zufrieden. 
+
+#### Mögliche Erweiterungen für TrinkFit
+
+- Eine Möglichkeit einbauen, um auf der Website von Hand Werte einzutragen. (Haben wir bewusst nicht gemacht, da man so zum Schummeln neigt.)
+- Personalisiertes Login auf die Website mit detaillierten Statistiken
+- Optimierung der Hardware, z.B. kompakteres Gehäuse
+
+#### Hilfsmittel (KI erlaubt und erwünscht)
+
+- Für die Umsetzung des Projekts wurde ChatGPT als Hilfsmittel in fast allen Projektphasen eingesetzt. Besonders hilfreich war ChatGPT bei der Programmierung des Arduino Codes. So konnte der Code Schritt für Schritt überarbeitet und weiterentwickelt werden. ChatGPT wurde auch genutzt, um Teile der Dokumenation zu schreiben oder um sie auf die Rechtschreibung zu überprüfen. Allerdings lieferte ChatGPT bei der Textgenerierung der Dokumentation meist keine zufriedenstellende Ergebnisse. So konnten die Texte zwar als Ausgangslage genutzt, mussten aber von Hand optimiert werden.
 
 ---
 
