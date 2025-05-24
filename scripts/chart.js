@@ -1,6 +1,5 @@
 let gespeicherteDaten = null;
 let wochenChart = null;
-let gradient = null;
 
 fetch('etl/chart_data.php')
   .then(response => response.json())
@@ -41,7 +40,10 @@ fetch('etl/chart_data.php')
             {
               label: 'Getrunken (L)',
               data: werte,
-              backgroundColor: '#F5C400',
+              backgroundColor: function(context) {
+                const index = context.dataIndex;
+                return data.wochenverlauf[index].is_today ? '#F5C400' : '#102A71';
+              },
               borderRadius: 20,
               borderSkipped: false
             },
@@ -62,7 +64,7 @@ fetch('etl/chart_data.php')
           scales: {
             y: {
               beginAtZero: true,
-              max: Math.max(3, parseFloat(ziel) + 0.5),
+              max: Math.max(3, Math.ceil(parseFloat(ziel) * 2) / 2),
               ticks: { stepSize: 0.5 },
               grid: { display: false }
             },
@@ -98,25 +100,7 @@ fetch('etl/chart_data.php')
               }
             }
           }
-        },
-        plugins: [{
-          id: 'applyGradient',
-          afterLayout(chart) {
-            const { ctx, chartArea } = chart;
-            if (!chartArea) return;
-
-            if (!gradient) {
-              gradient = ctx.createLinearGradient(0, chartArea.bottom, 0, chartArea.top);
-              gradient.addColorStop(0, '#17296d');
-              gradient.addColorStop(1, '#2f3d7e');
-            }
-
-            const dataset = chart.data.datasets[0];
-            dataset.backgroundColor = dataset.data.map((_, i) =>
-              data.wochenverlauf[i].is_today ? '#F5C400' : gradient
-            );
-          }
-        }]
+        }
       });
     }
 
@@ -126,10 +110,6 @@ fetch('etl/chart_data.php')
       const labels = data.tagesverlauf.map(e => e.zeit);
       const werte = data.tagesverlauf.map(e => parseFloat(e.menge));
 
-      const gradientDay = ctxTages.createLinearGradient(0, 300, 0, 0);
-      gradientDay.addColorStop(0, '#17296d');
-      gradientDay.addColorStop(1, '#2f3d7e');
-
       new Chart(ctxTages, {
         type: 'bar',
         data: {
@@ -137,7 +117,7 @@ fetch('etl/chart_data.php')
           datasets: [{
             label: 'Getrunken (L)',
             data: werte,
-            backgroundColor: gradientDay,
+            backgroundColor: '#102A71',
             borderRadius: 20,
             borderSkipped: false
           }]
@@ -192,6 +172,7 @@ document.getElementById('btn-day')?.addEventListener('click', () => {
     const ziel = parseFloat(gespeicherteDaten.heute.ziel);
     const prozent = Math.min(100, (menge / ziel) * 100);
     fill.style.width = prozent + '%';
+    fill.style.background = '#102A71';
     box?.classList.remove('hidden');
   }
 });
