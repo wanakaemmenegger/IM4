@@ -1,4 +1,6 @@
-/* Allgemeine Grundstyles */
+/* =====================
+   Allgemeine Grundstyles
+   ===================== */
 * {
   box-sizing: border-box;
 }
@@ -11,7 +13,6 @@ body {
   background-color: #f7f8fc;
 }
 
-
 h1, h2, h3 {
   font-family: "oso-sans", sans-serif;
   font-weight: 600;
@@ -23,11 +24,13 @@ h1, h2, h3 {
   padding: 0 1em;
 }
 
-/* Header mit Welle - blau hinterlegt */
+/* =====================
+   Header mit Welle
+   ===================== */
 .site-header {
   position: relative;
   background: #102A71;
-  padding: 20px 20px 80px; /* mehr Platz unten für Welle */
+  padding: 20px 20px 80px; /* Platz für Welle unten */
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -37,41 +40,27 @@ h1, h2, h3 {
 }
 
 .header-content {
-  z-index: 2;
   display: flex;
+  justify-content: space-between; /* Linksbündiges Icon und rechts Textlogo */
   align-items: center;
-  justify-content: flex-start;  /* für linksbündige Platzierung */
-  gap: 2em;                     /* Abstand zwischen Icon und Text */
-  padding-top: 40px;
-  padding-bottom: 40px;
-  max-width: 1000px;
-  margin: 0 auto;
   flex-wrap: wrap;
-}
-
-.header-content {
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: space-between; /* Logos an gegenüberliegenden Seiten */
   gap: 2em;
   padding: 40px 20px;
   max-width: 1000px;
   margin: 0 auto;
-  width: 100%;
-  flex-wrap: wrap;
-}
-
-.logo-text {
-  height: 60px;
-  width: auto;
-  order: 2; 
+  z-index: 2;
 }
 
 .logo-img {
   height: 100px;
   width: auto;
   order: 1;
+}
+
+.logo-text {
+  height: 60px;
+  width: auto;
+  order: 2;
 }
 
 .header-wave {
@@ -90,17 +79,9 @@ h1, h2, h3 {
   height: 120px;
 }
 
-
-
-/* Hauptbereich Styles */
-.intro-section {
-  /* Flex-Layout wird bei größeren Bildschirmen aktiviert */
-}
-
-.text-content {
-  /* Bei großem Viewport wächst dieses Element (flex:1) */
-}
-
+/* =====================
+   Hauptinhalt
+   ===================== */
 .image-content {
   text-align: center;
   margin: 1em 0;
@@ -115,6 +96,7 @@ h1, h2, h3 {
   font-style: italic;
 }
 
+/* Diagramm Umschaltung */
 .chart-toggle {
   display: flex;
   gap: 1em;
@@ -139,26 +121,46 @@ h1, h2, h3 {
   border: 2px solid #F5C400;
 }
 
-/* Tipp-Box (Aside) Styles */
-aside.tip-box {
+/* Tipp-Box (Aside) */
+aside.tip-box, .tip-box {
   background: #17296d;
   color: #ffffff;
   padding: 1em;
   border-radius: 10px;
   margin: 2em 0;
+  font-family: 'Roboto', sans-serif;
 }
 
-aside.tip-box h3 {
-  margin: 0 0 0.5em 0;
+.tip-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  border-radius: 30px;
+  padding: 2em;
+  max-width: 20%;
+  width: 100%;
 }
 
-aside.tip-box p {
-  margin: 0;
+.tip-box h3 {
+  font-family: 'oso-sans', sans-serif;
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
 }
 
-/* Vorteile-Box Styles */
+.tip-box p {
+  font-size: 1em;
+  margin: 0.5em 0;
+}
+
+.tip-box strong {
+  font-weight: bold;
+}
+
+/* Vorteile-Box */
 .advantages {
-  background: #F5C400; 
+  background: #F5C400;
   font-weight: bold;
   color: #ffffff;
   padding: 2em 10em;
@@ -180,6 +182,7 @@ aside.tip-box p {
   margin-bottom: 0.3em;
 }
 
+/* Fortschrittsbalken */
 .trinkfortschritt-box {
   text-align: center;
   margin: 2em auto;
@@ -202,15 +205,12 @@ aside.tip-box p {
   transition: width 1s ease;
 }
 
-#trinkInfo {
-  display: none;
-}
-
+#trinkInfo,
 .hidden {
   display: none !important;
 }
 
-
+/* Trinkstatistik */
 .trink-statistik {
   margin: 2em 0 1em;
   text-align: left;
@@ -232,23 +232,23 @@ aside.tip-box p {
   flex-wrap: wrap;
 }
 
+#datumBox, #zielBox {
+  padding: 0.4em 1em;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
 #datumBox {
   background-color: #17296d;
   color: #F5C400;
-  font-weight: bold;
-  padding: 0.4em 1em;
-  border-radius: 4px;
 }
 
 #zielBox {
   background-color: #F5C400;
   color: #17296d;
-  font-weight: bold;
-  padding: 0.4em 1em;
-  border-radius: 4px;
 }
 
-/* Diagramm + Tipp nebeneinander */
+/* Diagrammbereich und Tipp-Box nebeneinander */
 .chart-tip-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -269,38 +269,9 @@ aside.tip-box p {
   display: block;
 }
 
-.tip-box {
-  flex: 1;
-  background: #17296d;
-  color: #ffffff;
-  padding: 2em;
-  border-radius: 30px;
-  font-family: 'Roboto', sans-serif;
-  max-width: 20%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  text-align: center;
-  align-items: center;
-}
-
-.tip-box h3 {
-  font-family: 'oso-sans', sans-serif;
-  font-size: 1.5em;
-  margin-bottom: 0.5em;
-}
-
-.tip-box p {
-  font-size: 1em;
-  margin: 0.5em 0;
-}
-
-.tip-box strong {
-  font-weight: bold;
-}
-
-/* Footer mit Welle - blau hinterlegt */
+/* =====================
+   Footer mit Welle
+   ===================== */
 footer {
   position: relative;
   background: #102A71;
@@ -327,7 +298,9 @@ footer {
   height: 100%;
 }
 
-/* === POPUP === */
+/* =====================
+   PopUp Overlay
+   ===================== */
 .popup-overlay {
   position: fixed;
   top: 0;
@@ -415,9 +388,9 @@ footer {
   background: #f1d34d;
 }
 
-
-
-/* Responsive Design: ab 768px Breite mehrspaltig */
+/* =====================
+   Responsive Design
+   ===================== */
 @media (min-width: 768px) {
   .intro-section {
     display: flex;
@@ -435,13 +408,8 @@ footer {
     margin: 40px 0;
     width: 35%;
   }
-
-  .advantages {
-    padding: 2em 7em;
-  }
 }
 
-/* Optimiertes Layout für Tablets und kleinere Screens */
 @media (max-width: 1023px) {
   .chart-tip-wrapper {
     flex-direction: column;
@@ -457,7 +425,6 @@ footer {
   }
 }
 
-/* Mobile: Nur Textlogo anzeigen */
 @media (max-width: 768px) {
   .logo-img {
     display: none;
@@ -470,10 +437,10 @@ footer {
 
   .site-header {
     justify-content: center;
-    padding: 20px 0px 60px; /* mehr Platz unten für Welle */
+    padding: 20px 0 60px; /* Platz für Welle */
   }
 
-    .advantages {
+  .advantages {
     padding: 2em 3em;
   }
 }
