@@ -1,13 +1,15 @@
-let gespeicherteDaten = null;
-let wochenChart = null;
+// === Initialisierung ===
+let gespeicherteDaten = null; // Datenobjekt zur späteren Wiederverwendung
+let wochenChart = null;      // Referenz auf den Wochenchart
 
+// === Daten abrufen ===
 fetch('etl/chart_data.php')
   .then(response => response.json())
   .then(data => {
     console.log('Empfangene Daten:', data);
     gespeicherteDaten = data;
 
-    // === Statistik-Anzeige ===
+    // === Statistik-Anzeige im Textbereich ===
     const summary = document.getElementById('trinkSummary');
     const dateBox = document.getElementById('datumBox');
     const zielBox = document.getElementById('zielBox');
@@ -25,7 +27,7 @@ fetch('etl/chart_data.php')
       zielBox.textContent = `täglicher Trinkbedarf: ${ziel} L`;
     }
 
-    // === Wochenchart ===
+    // === Wochenchart erzeugen ===
     const ctxWochen = document.getElementById('wochenChart')?.getContext('2d');
     if (ctxWochen && data.wochenverlauf && data.heute) {
       const labels = data.wochenverlauf.map(e => e.wochentag);
@@ -40,7 +42,7 @@ fetch('etl/chart_data.php')
             {
               label: 'Getrunken (L)',
               data: werte,
-              backgroundColor: function(context) {
+              backgroundColor: context => {
                 const index = context.dataIndex;
                 return data.wochenverlauf[index].is_today ? '#F5C400' : '#102A71';
               },
@@ -104,7 +106,7 @@ fetch('etl/chart_data.php')
       });
     }
 
-    // === Tageschart ===
+    // === Tageschart erzeugen ===
     const ctxTages = document.getElementById('tagesChart')?.getContext('2d');
     if (ctxTages && data.tagesverlauf && data.heute) {
       const labels = data.tagesverlauf.map(e => e.zeit);
@@ -148,7 +150,7 @@ fetch('etl/chart_data.php')
   })
   .catch(err => console.error('Fehler beim Laden der Daten:', err));
 
-// === Umschaltbuttons ===
+// === Umschalten zwischen Wochen- und Tagesansicht ===
 document.getElementById('btn-week')?.addEventListener('click', () => {
   document.getElementById('wochenChart').style.display = 'block';
   document.getElementById('tagesChart').style.display = 'none';
@@ -165,6 +167,7 @@ document.getElementById('btn-day')?.addEventListener('click', () => {
   document.getElementById('btn-day').classList.add('active');
   document.querySelector('.chart-area')?.classList.add('tagesmodus');
 
+  // Fortschrittsanzeige aktualisieren
   const fill = document.getElementById('trinkFill');
   const box = document.querySelector('.trinkfortschritt-box');
   if (fill && gespeicherteDaten?.heute) {
