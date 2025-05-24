@@ -3,9 +3,9 @@ Leistungsnachweis IM4
 
 # TrinkFit – Ein smartes Trink-Tracking-System mit LED-Erinnerung
 
-**TrinkFit** ist ein smartes Trinkpad, das den Wasserkonsum automatisch erfasst und über ein LED-System an das regelmässige Trinken erinnert. Das Projekt entstand im Rahmen des Moduls **Interaktive Medien IV** an der Fachhochschule Graubünden.
+**TrinkFit** ist ein smartes Trinkpad, das den Wasserkonsum automatisch erfasst, online darstellt und über ein LED-System an das regelmässige Trinken erinnert. Das Projekt entstand im Rahmen des Moduls **Interaktive Medien IV** an der Fachhochschule Graubünden.
 
-Ziel ist es, eine funktionale und visuell unterstützende Lösung zu entwickeln, die Nutzer:innen über 50 motiviert, über den Tag hinweg ausreichend zu trinken – ohne aktive App oder ständiges Tippen auf dem Smartphone.
+Ziel ist es, eine funktionale und visuell unterstützende Lösung zu entwickeln, die Nutzer:innen über 50 motiviert, über den Tag hinweg ausreichend zu trinken – ohne manuelles Eintragen auf dem Smartphone.
 
 Wie das TrinkfitPad funktioniert sieht man in diesem Video:
 
@@ -17,13 +17,12 @@ Link zu unserer Website: https://trinkfit.wanaka.ch/
 
 Die Idee basiert auf der Beobachtung, dass viele Menschen zu wenig trinken – besonders während Beschäftigungen durch den Tag. In Interviews mit zwei Zielpersonen wurde deutlich, dass visuelle Signale wie Licht und ein möglichst automatischer Ablauf zum trinken animieren würden.
 
-TrinkFit erkennt Trinkvorgänge automatisch und bietet Feedback über Lichtsignale (LED-Ring) und ein OLED-Display. Zusätzlich werden die Daten an eine Online-Datenbank übertragen und anschliessend auf seiner Website grafisch aufbereitet.
+TrinkFit erkennt Trinkvorgänge automatisch und bietet Feedback über Lichtsignale (LED-Ring) und ein OLED-Display. Zusätzlich werden die Daten an eine Online-Datenbank übertragen und anschliessend auf einer Website grafisch dargestellt.
 
 Unsere Idee haben wir zu Beginn des Projekts in einem Flussdiagramm aufgezeichnet:
+![Flussdiagramm_Trinkfit](images/Flussdiagramm_TrinkFit.png)
 
-Hier Flussdiagramm einbauen:
-
-Link zu unserem Figma-Mockup:
+Link zu unserem Flussdiagram: https://www.figma.com/design/Npsf3iH8oIAoPRJ0vXs33R/IM-4-%E2%80%93-App-Konzeption-Milena-Stadtelmann-Wanaka-Emmenegger?node-id=1402-201&t=jZKB1xrbvuY2Au7f-1
 
 ---
 
