@@ -66,7 +66,7 @@ Unter diesem Link ist eine detaillierte Schritt-für-Schritt Bauanleitung abgesp
 
 
 Hier ein Bild vom Steckschema:
-![Steckschema Trinkfit](images/Steckplan Trinkfit.png)
+![Steckschema Trinkfit](images/Steckplan_Trinkfit.png)
 
 ## Komponentenübersicht:
 
