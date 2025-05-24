@@ -465,12 +465,12 @@ footer {
 
   .logo-text {
     margin: 0 auto;
-    height: 100px;
+    height: 80px;
   }
 
   .site-header {
     justify-content: center;
-    padding: 20px;
+    padding: 20px 0px 60px; /* mehr Platz unten für Welle */
   }
 
     .advantages {
