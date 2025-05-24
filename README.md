@@ -26,7 +26,7 @@ Link zum Flussdiagram: https://www.figma.com/design/Npsf3iH8oIAoPRJ0vXs33R/IM-4-
 
 ---
 
-## ⚙️ So wird das TrinkFit-Pad bedient:
+## ⚙️ So wird das TrinkFit-Pad bedient
 
 1. Schliesse das TrinkFit Pad am Strom an und starte es.
 2. Warte 10 Sekunden und folge den Anweisungen auf dem Display. 
@@ -36,14 +36,14 @@ Link zum Flussdiagram: https://www.figma.com/design/Npsf3iH8oIAoPRJ0vXs33R/IM-4-
 6. Beobachte deinen Fortschritt hier online und trink dich fit.
 7. Vergessen zu trinken? Mit einem Blinken erinnert dich das TrinkFit Pad nach zwei Stunden daran. Sobald du trinkst, hört es wieder auf.
 
-Eine detaillierte Bedienungsanleitung mit zusätzlichen Anmerkungen und Ergänzungen ist unter folgendem Link zu finden:
+Eine detaillierte Bedienungsanleitung ist unter folgendem Link zu finden:
 https://docs.google.com/document/d/1XEH3uDcnz3PhZMaaVluLnOC8TfT7FdvxlLkdgI5IRxk/edit?usp=sharing
 
 ---
 
 ## Technische Umsetzung
 
-Diese technischen Funktionen hat unser TrinkFit Pad:
+Diese technischen Funktionen hat das TrinkFit Pad:
 
 - Automatische Erkennung von Trinkmengen (via HX711-Wägezelle)
 - OLED-Anzeige mit Status- und Bedienhinweisen
@@ -150,11 +150,18 @@ Hier Reflexion ergänzen:
 - Bewusst für LED entschieden und nicht für Ton, da ein Ton zu agressiv wäre.
 
 #### Aufgabenverteilung
+Für uns war folgende Aufgabenverteilung am effizientisten. Wir haben uns aber natürlich gegenseitg im Bereich der jeweils anderen untersützt.
+- Ideenfindung (beide)
+- UX Design, Persona, Stylesheet, MockUp Website (beide)
+- Hardware-Programmierung (Milena)
+- Website-Darstellung (Wanaka)
+- Produktdesign (Milena)
+- Dokumentation (beide)
 #### Entwicklungsprozess
 #### verworfene Lösungsansätze
 #### Designentscheidungen
 #### Inspiration
-#### Fehlschläge und Umplanung (z.B. db_config.php hochgeladen)
+#### Fehlschläge und Umplanung
 
 - Beim Anschliessen des Sensors und der anderen Komponenten auf dem Breadboard, kam es gleich zweinmal vermutlich zu einem Kurzschluss, was den Microcontroller zerstört hat. Der Grund war, dass Stromzuflüsse falsch gesteckt wurden, wodurch auf dem Board vermutlich zu viel Strom floss. Zum Glück haben wir von Jan schnell einen Ersatz bekommen. 
 
@@ -194,7 +201,7 @@ Hier ein kleines Fazit ergänzen.
 - **Milena Stadelmann** 
 
 FH Graubünden  
-Modul: Interaktive Medien IV – Frühling 2025
+Modul: Interaktive Medien 4 – Frühling 2025
 
 ---
 
