@@ -1,3 +1,10 @@
+// ==========================================================================
+// TrinkFit – Diagrammlogik mit Chart.js
+// Holt Messdaten via Fetch-API, zeigt Wochen- und Tagesverlauf
+// Dynamische Anpassung der Statistik und Zielwerte möglich
+// ==========================================================================
+
+
 // === Initialisierung ===
 let gespeicherteDaten = null; // Datenobjekt zur späteren Wiederverwendung
 let wochenChart = null;      // Referenz auf den Wochenchart

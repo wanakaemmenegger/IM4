@@ -1,3 +1,10 @@
+// ==========================================================================
+// TrinkFit – Popup zur Eingabe persönlicher Angaben
+// Berechnet individuellen Wasserbedarf basierend auf Alter & Gewicht
+// Aktualisiert Wasserbedarf und ggf den maximal Wert des Wochen-Diagramms
+// ==========================================================================
+
+
 // === Pop-up-Funktionalität zur Eingabe von Alter und Gewicht ===
 document.addEventListener("DOMContentLoaded", () => {
   const popup = document.getElementById("popup-overlay");

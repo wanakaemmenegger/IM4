@@ -1,3 +1,9 @@
+// ==========================================================================
+// TrinkFit – Tipp-Rotation
+// Zeigt wechselnde Trinktipps im 2-Minuten-Takt im Infobereich
+// ==========================================================================
+
+
 // === Tipps zyklisch anzeigen (alle 2 Minuten) ===
 document.addEventListener('DOMContentLoaded', () => {
   // Liste aller Tipps mit Überschrift und Text
