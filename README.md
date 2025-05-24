@@ -3,9 +3,9 @@ Leistungsnachweis IM4
 
 # TrinkFit – Ein smartes Trink-Tracking-System mit LED-Erinnerung
 
-**TrinkFit** ist ein smartes Trinkpad, das den Wasserkonsum automatisch erfasst und über ein LED-System an das regelmässige Trinken erinnert. Das Projekt entstand im Rahmen des Moduls **Interaktive Medien IV** an der Fachhochschule Graubünden.
+**TrinkFit** ist ein smartes Trinkpad, das den Wasserkonsum automatisch erfasst, online darstellt und über ein LED-System an das regelmässige Trinken erinnert. Das Projekt entstand im Rahmen des Moduls **Interaktive Medien IV** an der Fachhochschule Graubünden.
 
-Ziel ist es, eine funktionale und visuell unterstützende Lösung zu entwickeln, die Nutzer:innen über 50 motiviert, über den Tag hinweg ausreichend zu trinken – ohne aktive App oder ständiges Tippen auf dem Smartphone.
+Ziel ist es, eine funktionale und visuell unterstützende Lösung zu entwickeln, die Nutzer:innen über 50 motiviert, über den Tag hinweg ausreichend zu trinken – ohne manuelles Eintragen auf dem Smartphone.
 
 Wie das TrinkfitPad funktioniert sieht man in diesem Video:
 
@@ -15,15 +15,14 @@ Link zu unserer Website: https://trinkfit.wanaka.ch/
 
 ## 💡 Projektidee
 
-Die Idee basiert auf der Beobachtung, dass viele Menschen zu wenig trinken – besonders während Beschäftigungen durch den Tag. In Interviews mit zwei Zielpersonen wurde deutlich, dass visuelle Signale wie Licht und ein möglichst automatischer Ablauf zum trinken animieren würden.
+Die Idee basiert auf der Beobachtung, dass viele Menschen zu wenig trinken – besonders während Beschäftigungen durch den Tag. In Interviews mit zwei Zielpersonen wurde deutlich, dass visuelle Signale wie Licht und ein möglichst automatischer Ablauf zum trinken animieren.
 
-TrinkFit erkennt Trinkvorgänge automatisch und bietet Feedback über Lichtsignale (LED-Ring) und ein OLED-Display. Zusätzlich werden die Daten an eine Online-Datenbank übertragen und anschliessend auf seiner Website grafisch aufbereitet.
+TrinkFit erkennt Trinkvorgänge automatisch und bietet Feedback über Lichtsignale (LED-Ring) und ein OLED-Display. Zusätzlich werden die Daten an eine Datenbank übertragen und auf der Website grafisch dargestellt. Zusätzlich bitete die Website hilfreiche Tipps und Vorteile um mehr Wasser zu trinken.
 
 Unsere Idee haben wir zu Beginn des Projekts in einem Flussdiagramm aufgezeichnet:
+![Flussdiagramm_Trinkfit](images/Flussdiagramm_TrinkFit.png)
 
-Hier Flussdiagramm einbauen:
-
-Link zu unserem Figma-Mockup:
+Link zum Flussdiagram: https://www.figma.com/design/Npsf3iH8oIAoPRJ0vXs33R/IM-4-%E2%80%93-App-Konzeption-Milena-Stadtelmann-Wanaka-Emmenegger?node-id=1402-201&t=jZKB1xrbvuY2Au7f-1
 
 ---
 
@@ -54,20 +53,20 @@ Diese technischen Funktionen hat unser TrinkFit Pad:
   - Erfolgssignal nach Trinkvorgang (grün)
   - Fehlerhinweis bei fehlgeschlagener Messung (rot)
 - Datenübertragung an eine Online-Datenbank
-- Visualisierung der Daten auf einer externen Website
+- Visualisierung der Daten auf Website
 
-Um das umzusetzen waren verschiedene Schritte nötig.
+Um das Projekt umzusetzen waren verschiedene Schritte nötig.
 1. Hardware aufbauen
 2. ESP32 programmieren
-3. Datenbank aufsetzen 
-4. Server aufsetzen 
-5. Website programmieren und veröffentlichen
+3. Server aufsetzen 
+4. Datenbank aufsetzen und mit Hardware verbinden
+5. Website programmieren, mit Datenbank verbinden, Daten darauf auslesen und auf Server laden
 
 Unter diesem Link ist eine detaillierte Schritt-für-Schritt Bauanleitung abgespeichert, um das Projekt nachzubauen (inklusive Steckschema): 
 
 
 Hier ein Bild vom Steckschema:
-![Steckschema TrinkFit](images/Steckplan Trinkfit.png)
+![Steckschema Trinkfit](images/Steckplan Trinkfit.png)
 
 ## Komponentenübersicht:
 
@@ -99,7 +98,9 @@ Für die Umsetzung unseres Projekt sind folgende Komponenten nötig:
 | `load.php`             | Serverlogik: Empfängt Daten und schreibt sie in die Datenbank  |
 | `chart_data.php`       | Serverlogik: Stellt gespeicherte Trinkdaten als JSON bereit    |
 | `chart.js`             | Visualisiert Daten auf der Website                             |
-| `tipps.js`             | Zeigt zufällige Trinktipps im Frontend                         |
+| `tipps.js`             | Zeigt Trinktipps auf Website, Wechsel all 2 Minuten            |
+| `popup.js`             | Eingabe von Alter und Gewicht Users, Berechnung Wasserbedarf   |
+
 
 #### Web-Frontend & Konfiguration
 
@@ -108,10 +109,10 @@ Für die Umsetzung unseres Projekt sind folgende Komponenten nötig:
 | `index.html`           | Grundstruktur der Website                                      |
 | `styles.css`           | Visuelles Styling der Website                                  |
 | `db_config.php`        | Stellt Verbindung zur Datenbank her (für PHP)                  |
-| Icons, Media, Favicon  | Statische Inhalte zur Darstellung                              |
+| Images                 | Statische Inhalte zur Darstellung                              |
 
 
-Die Komponenten sind in Hardware, Protokolle und Software gegliedert und bilden gemeinsam das technische System hinter dem TrinkFit-Pad. Die Programmlogik auf dem ESP32 kommuniziert über WLAN und HTTP mit dem Webserver, wo die Daten gespeichert und anschliessend visualisiert werden. Die Weboberfläche besteht aus HTML, CSS und JavaScript und ruft die Messdaten über PHP-Schnittstellen aus der Datenbank ab.
+Die Komponenten sind in Hardware, Protokolle und Software gegliedert und bilden gemeinsam das technische System hinter dem TrinkFit Pad. Die Programmlogik auf dem ESP32 kommuniziert über WLAN und HTTP mit dem Webserver, wo die Daten gespeichert und anschliessend visualisiert werden. Die Weboberfläche besteht aus HTML, CSS und JavaScript und ruft die Messdaten über PHP-Schnittstellen aus der Datenbank ab.
 
 Hier Komponentenplan einfügen
 ---
@@ -130,15 +131,14 @@ Der Ablauf ist als **Zustandsautomat** implementiert und umfasst die Phasen:
 
 Der vollständige Code ist hier zu finden:
 Genauere Erläuterungen zu den Codes sind im Anhang der Schritt-für-Schritt Bauanleitung aufgeführt:
+Die gesendeten Daten werden über eine PHP-API (`load.php`) an eine MySQL-Datenbank übermittelt.  
+
 
 #### Website
 
-Die Website wurde mit Visual Code programmiert.... noch ergänzen
+Die Website wurde mit Visual Code programmiert und zeigt in Echtzeit die in der Datenbank erfassten Trinkmengen. ???
 
-Die gesendeten Daten werden über eine PHP-API (`load.php`) an eine MySQL-Datenbank übermittelt.  
-Eine separate Website visualisiert die Trinkhistorie grafisch.
-
-Genauere Erläuterungen zu den Codes sind im Anhang der Schritt-für-Schritt Bauanleitung aufgeführt:
+Genauere Erläuterungen zu den Codes sind in den jeweiligen Code-Abschnitten im GitHub einszusehen.
 
 ---
 
@@ -158,9 +158,9 @@ Hier Reflexion ergänzen:
 
 - Beim Anschliessen des Sensors und der anderen Komponenten auf dem Breadboard, kam es gleich zweinmal vermutlich zu einem Kurzschluss, was den Microcontroller zerstört hat. Der Grund war, dass Stromzuflüsse falsch gesteckt wurden, wodurch auf dem Board vermutlich zu viel Strom floss. Zum Glück haben wir von Jan schnell einen Ersatz bekommen. 
 
-- Leider ist auch die erste Waage, die wir auf Alibaba bestellt haben kaputt gegangen. Die Kabelverbindungen am HX711 Sensor lösten sich und da wir keine Erfahrung im Löten haben, konnten wir ihn nicht flicken. Wir haben schliesslich eine stabilere Waage neu bestellt, die nun im Einsatz ist.
+- Leider ist auch die erste Waage, die wir auf AliExpress bestellt haben kaputt gegangen. Die Kabelverbindungen am HX711 Sensor lösten sich und da wir keine Erfahrung im Löten haben, konnten wir ihn nicht flicken. Wir haben schliesslich eine stabilere Waage neu bestellt, die nun im Einsatz ist.
 
-- Im Prozess der Datenbankerstellung haben wir einmal ausversehen das Dokument db_config.php auf GitHub geladen, da wir den Namen des Dokuments angepasst, aber es nicht in gitignore geändert haben. Anschliessend haben wir das Dokument über den Task Manager von Visual Codes wieder aus GitHub entfernt. Zudem haben wir das Login und Passwort angepasst, um die Sicherheit zu gewährleisten. 
+- Im Prozess der Datenbankerstellung haben wir einmal ausversehen das Dokument db_config.php auf GitHub geladen, da wir den Namen des Dokuments angepasst, aber es nicht in gitignore geändert haben. Anschliessend haben wir das Dokument über den Task Manager von Visual Codes wieder aus GitHub entfernt. Zudem haben wir das Login und Passwort angepasst, um die Sicherheit zu gewährleisten. Das selbe ist und mit dem sftp.json File passiert, da wir ausversehen im .gitignore etwas angepasst hatten. Auch hier haben wir das Dokument direkt aus GitHub entfernt und die Logindaten angepasst. Gemäss Absprache mit Jan Fiess reicht dieses Vorgehen im Rahmen dieses Projektes aus.
 
 #### Challenges
 #### Lerneffekte (z.B. Erkenntnisse im Umgang mit Stromversorgung, Kalibrierung)
@@ -176,11 +176,7 @@ Hier Reflexion ergänzen:
 
 #### Hilfsmittel (KI erlaubt und erwünscht)
 
-- Für die Umsetzung des Projekts wurde ChatGPT als Hilfsmittel in fast allen Projektphasen eingesetzt. Besonders hilfreich war ChatGPT bei der Programmierung des Arduino Codes. So konnte der Code Schritt für Schritt überarbeitet und weiterentwickelt werden. 
-
-Auch bei der Umsetzung der Website mittels PHP, JavaScript, HTML und CSS kam ChatGPT zum Einsatz. Zudem auch getwaves.io zur Generierung der Wellen im Header und Footer Bereich. Die KI hat dabei Schritt für Schritt beim Aufbau, der Umsetzung und Fehlersuche geholfen.
-
-ChatGPT wurde auch genutzt, um Teile der Dokumenation zu schreiben oder um sie auf die Rechtschreibung zu überprüfen. Allerdings lieferte ChatGPT bei der Textgenerierung der Dokumentation meist keine zufriedenstellende Ergebnisse. So konnten die Texte zwar als Ausgangslage genutzt, mussten aber von Hand optimiert werden.
+- Für die Umsetzung des Projekts wurde ChatGPT als Hilfsmittel in fast allen Projektphasen eingesetzt. Besonders hilfreich war ChatGPT bei der Programmierung des Arduino Codes. So konnte der Code Schritt für Schritt überarbeitet und weiterentwickelt werden. Auch bei der Umsetzung der Website mittels PHP, JavaScript, HTML und CSS kam ChatGPT zum Einsatz. Zudem auch getwaves.io zur Generierung der Wellen im Header und Footer Bereich. Die KI hat dabei Schritt für Schritt beim Aufbau, der Umsetzung und Fehlersuche geholfen. ChatGPT wurde auch genutzt, um Teile der Dokumenation zu schreiben oder um sie auf die Rechtschreibung zu überprüfen. Allerdings lieferte ChatGPT bei der Textgenerierung der Dokumentation meist keine zufriedenstellende Ergebnisse. So konnten die Texte zwar als Ausgangslage genutzt, mussten aber von Hand optimiert werden.
 
 ---
 
