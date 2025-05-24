@@ -64,9 +64,9 @@ Um das Projekt umzusetzen waren verschiedene Schritte nötig.
 
 Unter diesem Link ist eine detaillierte Schritt-für-Schritt Bauanleitung abgespeichert, um das Projekt nachzubauen (inklusive Steckschema): 
 
-
-Hier ein Bild vom Steckschema:
 ![Steckschema Trinkfit](images/Steckplan_Trinkfit.png)
+
+Link Bauanleitung
 
 ## Komponentenübersicht:
 
