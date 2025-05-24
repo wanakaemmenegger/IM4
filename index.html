@@ -5,38 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>TrinkFit</title>
 
-  <!-- Fonts -->
+  <!-- Schriftarten -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://use.typekit.net/buy8dvn.css" />
 
-  <!-- CSS -->
+  <!-- Externe CSS-Datei -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-<header class="site-header">
-  <div class="header-content">
-    <img src="images/Logo_Trink_Fit_transparent.png" alt="TrinkFit Logo" class="logo-img" />
-    <img src="images/Logo_Trink_Fit-03_transparent.png" alt="TrinkFit Schriftzug" class="logo-text" />
-  </div>
 
-  <div class="header-wave">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
-      <path fill="#f7f8fc" fill-opacity="1" d="M0,128L34.3,144C68.6,160,137,192,206,176C274.3,160,343,96,411,90.7C480,85,549,139,617,165.3C685.7,192,754,192,823,186.7C891.4,181,960,171,1029,154.7C1097.1,139,1166,117,1234,138.7C1302.9,160,1371,224,1406,256L1440,288L1440,320L0,320Z"></path>
-    </svg>
-  </div>
+  <!-- Header mit Logo, Schriftzug und Wellenabschluss -->
+  <header class="site-header">
+    <div class="header-content">
+      <img src="images/Logo_Trink_Fit_transparent.png" alt="TrinkFit Logo" class="logo-img" />
+      <img src="images/Logo_Trink_Fit-03_transparent.png" alt="TrinkFit Schriftzug" class="logo-text" />
+    </div>
 
-</header>
+    <!-- Dekorative Welle unten im Header -->
+    <div class="header-wave">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path fill="#f7f8fc" fill-opacity="1"
+          d="M0,128L34.3,144C68.6,160,137,192,206,176C274.3,160,343,96,411,90.7C480,85,549,139,617,165.3C685.7,192,754,192,823,186.7C891.4,181,960,171,1029,154.7C1097.1,139,1166,117,1234,138.7C1302.9,160,1371,224,1406,256L1440,288L1440,320L0,320Z" />
+      </svg>
+    </div>
+  </header>
 
-
-
-
+  <!-- Hauptbereich der Seite -->
   <main>
     <div class="container">
+
+      <!-- Einleitung und Funktionsbeschreibung -->
       <section class="intro-section">
         <div class="text-content">
           <h1>Hey! Willkommen bei TrinkFit!</h1>
           <p>Hier kannst du deinen Trinkfortschritt messen und damit aktiv deine Gesundheit verbessern.</p>
+
           <h2>So funktioniert das TrinkFit Pad:</h2>
           <ol>
             <li>Schliesse das TrinkFit Pad am Strom an und starte es</li>
@@ -48,12 +52,14 @@
           </ol>
           <p class="note">Hinweis: Falsche Messdaten oder Fehlermeldung auf dem Display? Einfach den Tara-Button drücken und so das TrinkFit Pad neu starten.</p>
         </div>
+
+        <!-- Bild vom TrinkFit Pad -->
         <div class="image-content">
           <img src="images/Trink_Fit_Pad.png" alt="TrinkFit Pad mit Wasserglas" />
         </div>
       </section>
 
-      <!-- Trinkstatistik -->
+      <!-- Statistik-Anzeige -->
       <div class="trink-statistik">
         <h2>Deine TrinkFit Statistik</h2>
         <p id="trinkSummary">Lade Statistik...</p>
@@ -63,15 +69,19 @@
         </div>
       </div>
 
+      <!-- Bereich für Diagramme und Tipps -->
       <div class="chart-tip-wrapper">
+
+        <!-- Diagrammbereich -->
         <div class="chart-area">
-          <!-- Umschaltbuttons -->
+
+          <!-- Umschaltbuttons für Statistik -->
           <div class="chart-toggle">
             <button id="btn-week" class="active">Wochenverlauf</button>
             <button id="btn-day">Tagesverlauf</button>
           </div>
 
-          <!-- Fortschrittsbalken -->
+          <!-- Fortschrittsbalken (nur bei Tagesverlauf) -->
           <div class="trinkfortschritt-box hidden">
             <div class="trinkfortschritt">
               <div class="trinkfortschritt-fill" id="trinkFill"></div>
@@ -79,11 +89,12 @@
             <p id="trinkInfo"></p>
           </div>
 
-          <!-- Diagramme -->
+          <!-- Diagramme (Canvas für Chart.js) -->
           <canvas id="wochenChart" width="600" height="300"></canvas>
           <canvas id="tagesChart" width="600" height="300" style="display: none;"></canvas>
         </div>
 
+        <!-- TrinkFit Tipp-Box -->
         <aside class="tip-box">
           <h3>TrinkFit Tipp!</h3>
           <p id="tip-headline"><strong>Flüssigkeit via Ernährung?</strong></p>
@@ -92,7 +103,7 @@
         </aside>
       </div>
 
-      <!-- Vorteile -->
+      <!-- Vorteile des Wassertrinkens -->
       <section class="advantages">
         <h2>Gesundheitliche Vorteile von genügend Wasser-Trinken</h2>
         <ul>
@@ -108,6 +119,7 @@
     </div>
   </main>
 
+  <!-- Footer mit Wellenabschluss -->
   <footer>
     <div class="footer-wave-top">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
@@ -121,40 +133,35 @@
     </div>
   </footer>
 
+  <!-- Pop-up zur Eingabe persönlicher Angaben -->
+  <div id="popup-overlay" class="popup-overlay hidden">
+    <div class="popup-box">
+      <h3><span class="highlight">Deine Angaben</span></h3>
+      <p>Hilf uns mit deinen Angaben deinen persönlichen Wasserbedarf pro Tag zu berechnen.</p>
 
-<!--PopUp-->
-<div id="popup-overlay" class="popup-overlay hidden">
-  <div class="popup-box">
-    <h3><span class="highlight">Deine Angaben</span></h3>
-    <p>Hilf uns mit deinen Angaben deinen persönlichen Wasserbedarf pro Tag zu berechnen.</p>
+      <form id="angabenForm">
+        <label for="alter">Alter</label>
+        <div class="input-row">
+          <input type="number" id="alter" name="alter" required value="25" />
+          <span class="unit">Jahre</span>
+        </div>
 
-    <form id="angabenForm">
-      <label for="alter">Alter</label>
-      <div class="input-row">
-        <input type="number" id="alter" name="alter" required value="25" />
-        <span class="unit">Jahre</span>
-      </div>
+        <label for="gewicht">Körpergewicht</label>
+        <div class="input-row">
+          <input type="number" id="gewicht" name="gewicht" required value="55" />
+          <span class="unit">KG</span>
+        </div>
 
-      <label for="gewicht">Körpergewicht</label>
-      <div class="input-row">
-        <input type="number" id="gewicht" name="gewicht" required value="55" />
-        <span class="unit">KG</span>
-      </div>
-
-      <button type="submit" class="btn-yellow">ANGABEN BESTÄTIGEN</button>
-    </form>
+        <button type="submit" class="btn-yellow">ANGABEN BESTÄTIGEN</button>
+      </form>
+    </div>
   </div>
-</div>
 
-
-
-
-  <!-- Chart.js-Bibliothek -->
+  <!--Skripte -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-  <!-- Dein eigenes JS -->
   <script src="scripts/chart.js"></script>
   <script src="scripts/tipps.js"></script>
   <script src="scripts/popup.js"></script>
+
 </body>
 </html>
