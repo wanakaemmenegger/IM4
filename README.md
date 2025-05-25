@@ -173,13 +173,13 @@ Für uns war folgende Aufgabenverteilung am effizientisten. Wir haben uns aber n
 #### Lerneffekte (z.B. Erkenntnisse im Umgang mit Stromversorgung, Kalibrierung)
 #### Known Bugs (Optimierungspotenzial)
 
-- Die Waage ist manchmal fehleranfällig. Insbesondere beim ersten Gebrauch (wenn sie sich mit einem neuen WLAN verbindet), bei einer unruhigen Unterlage oder wenn sie mit einem schweren Trinkgefäss verwendet wird. Zudem driftet die Gewichtsmessung der Waage bei langem Gebrauch ab, wodurch falsche Messergebnisse (Trinkgefäss + Wasser) auf dem Display angezeigt werden. Das hat allerdings keinen Einfluss auf die Messung der Trinkmessung. Durch die eingebauten Sicherheitsmechanismen im Code kommt es so gut wie nie zu falschen Trinkmessungen, die in der Datenbank landen. Zudem sind die Trinkmessungen gemäss unserer Einschätzung bis auf ca. 10ml genau (wir haben die Waage über 3 Wochen lang regelmässig getestet). Daher sind wir mit der Genauigkeit der Waage sehr zufrieden. 
+- Die Waage ist manchmal fehleranfällig. Insbesondere beim ersten Gebrauch (wenn sie sich mit einem neuen WLAN verbindet), bei einer unruhigen Unterlage oder wenn sie mit einem schweren Trinkgefäss verwendet wird. Zudem driftet die Gewichtsmessung der Waage bei langem Gebrauch ab, wodurch falsche Messergebnisse (Trinkgefäss + Wasser) auf dem Display angezeigt werden. Das hat allerdings keinen Einfluss auf die Messung der Trinkmenge. Durch die eingebauten Sicherheitsmechanismen im Code kommt es ausserdem so gut wie nie zu falschen Trinkmessungen, die in der Datenbank landen. Zudem sind die Trinkmessungen gemäss unserer Einschätzung bis auf ca. 10ml genau (wir haben die Waage über 3 Wochen lang regelmässig getestet). Daher sind wir mit der Genauigkeit der Waage sehr zufrieden und uns sind keine weiteren Bugs bekannt. 
 
 #### Mögliche Erweiterungen für TrinkFit
 
 - Eine Möglichkeit einbauen, um auf der Website von Hand Werte einzutragen. (Haben wir bewusst nicht gemacht, da man so zum Schummeln neigt.)
 - Personalisiertes Login auf die Website mit detaillierten Statistiken
-- Optimierung der Hardware, z.B. kompakteres Gehäuse
+- Optimierung der Hardware, z.B. kompakteres Gehäuse oder besser zugänglicher Reset-Knopf
 
 #### Hilfsmittel (KI erlaubt und erwünscht)
 
