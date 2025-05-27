@@ -15,7 +15,7 @@ Ziel ist es, eine funktionale und visuell unterstützende Lösung zu entwickeln,
 
 ## 💡 Projektidee
 
-Die Idee basiert auf der Beobachtung, dass viele Menschen zu wenig trinken – besonders während Beschäftigungen durch den Tag. In Interviews mit zwei Zielpersonen wurde deutlich, dass visuelle Signale wie Licht und ein möglichst automatischer Ablauf zum trinken animieren.
+Die Idee basiert auf der Beobachtung, dass viele Menschen zu wenig trinken – besonders während Beschäftigungen durch den Tag. In Interviews mit zwei Zielpersonen wurde deutlich, dass visuelle Signale wie Licht (Ton wäre zu aggressiv) und ein möglichst automatischer Ablauf zum trinken animieren.
 
 TrinkFit erkennt Trinkvorgänge automatisch und bietet Feedback über Lichtsignale (LED-Ring) und ein OLED-Display. Zusätzlich werden die Daten an eine Datenbank übertragen und auf der Website grafisch dargestellt. Zusätzlich bietet die Website hilfreiche Tipps und Vorteile um mehr Wasser zu trinken.
 
