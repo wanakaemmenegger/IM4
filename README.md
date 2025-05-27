@@ -9,7 +9,7 @@ Ziel ist es, eine funktionale und visuell unterstützende Lösung zu entwickeln,
 
 **Wie das TrinkfitPad funktioniert sieht man in diesem Video:**
 
-Link zu unserer Website: https://trinkfit.wanaka.ch/
+**Link zu unserer Website:** https://trinkfit.wanaka.ch/
 
 ---
 
@@ -43,7 +43,7 @@ https://docs.google.com/document/d/1XEH3uDcnz3PhZMaaVluLnOC8TfT7FdvxlLkdgI5IRxk/
 
 ## Technische Umsetzung
 
-Diese technischen Funktionen hat das TrinkFit Pad:
+**Diese technischen Funktionen hat das TrinkFit Pad:**
 
 - Automatische Erkennung von Trinkmengen (via HX711-Wägezelle)
 - OLED-Anzeige mit Status- und Bedienhinweisen
@@ -55,7 +55,7 @@ Diese technischen Funktionen hat das TrinkFit Pad:
 - Datenübertragung an eine Online-Datenbank
 - Visualisierung der Daten auf Website
 
-Um das Projekt umzusetzen waren verschiedene Schritte nötig.
+**Um das Projekt umzusetzen waren verschiedene Schritte nötig:**
 1. Hardware aufbauen
 2. Gehäuse bauen
 2. Hardware programmieren
@@ -70,7 +70,7 @@ https://docs.google.com/document/d/1v_iRln1-3_Z1rBspjY5z-w0nKUgZ-AYMQeU4w6nC4Hc/
 
 ## Komponentenübersicht:
 
-Für die Umsetzung unseres Projekt sind folgende Komponenten nötig:
+**Für die Umsetzung unseres Projekt sind folgende Komponenten nötig:**
 
 | Komponente             | Funktion                                                       |
 |------------------------|----------------------------------------------------------------|
@@ -119,9 +119,9 @@ Die Komponenten sind in Hardware, Protokolle und Software gegliedert und bilden 
 ![Komponentenplan Trinkfit](images/Komponentenplan_TrinkFit.png)
 ---
 
-### Programmierung
+## Programmierung
 
-#### Waage
+### Waage
 
 Das TrinkFit Pad wurde über die **Arduino IDE** programmiert. 
 
@@ -139,7 +139,7 @@ Die gesendeten Daten werden über eine PHP-API (`load.php`) an eine MySQL-Datenb
 **Genauere Erläuterungen zu allen Codes sind im Anhang der Schritt-für-Schritt Bauanleitung aufgeführt:**
 https://docs.google.com/document/d/1v_iRln1-3_Z1rBspjY5z-w0nKUgZ-AYMQeU4w6nC4Hc/edit?usp=drive_link
 
-#### Website
+### Website
 
 Die Website wurde mit Visual Code programmiert und zeigt in Echtzeit die in der Datenbank erfassten Trinkmengen. ???
 
