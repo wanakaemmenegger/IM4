@@ -7,9 +7,12 @@ Leistungsnachweis IM4
 
 Ziel ist es, eine funktionale und visuell unterstützende Lösung zu entwickeln, die Nutzer:innen über 50 motiviert, über den Tag hinweg ausreichend zu trinken – ohne manuelles Eintragen auf dem Smartphone.
 
+
 **Wie das TrinkfitPad funktioniert sieht man in diesem Video:**
 
 **Link zu unserer Website:** https://trinkfit.wanaka.ch/
+
+![TrinkFit Produkt](images/TrinkFit_Produkt.jpg)
 
 ---
 
@@ -181,6 +184,8 @@ Um das Breadboard mit den Kabeln zu verstecken und um das TrinkFit Pad handliche
 ![Komponentenplan Trinkfit](images/3D_Drucker.gif)
 
 Da wir noch nie mit der Software gearbeitet haben und auch noch nie ein 3D-Modell entworfen haben, war es für uns eine sehr grosse Herausforderung, das in so kurzer Zeit umzusetzen. Aufgrund der Komplexität haben wir schlussendlich darauf verzichtet den Reset Button des Microcontrollers direkt mit dem Gehäuse zu verknüpfen. Dank einer zusätzlichen Beschriftung ist dessen Bedienung nun aber trotzdem benutzerfreundlich und intuitiv.
+
+![TrinkFit Reset Knopf](images/TrinkFit_Reset.jpg)
 
 Wir haben in dem Prozess sehr viel gelernt und sind dank der Hilfe von Jan zu einem tollen Ergebnis gekommen. 
 
