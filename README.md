@@ -8,7 +8,7 @@ Leistungsnachweis IM4
 Ziel ist es, eine funktionale und visuell unterstützende Lösung zu entwickeln, die Nutzer:innen über 50 motiviert, über den Tag hinweg ausreichend zu trinken – ohne manuelles Eintragen auf dem Smartphone.
 
 
-**Wie das TrinkfitPad funktioniert sieht man in diesem Video:**
+**Wie das Trinkfit Pad funktioniert sieht man in diesem Video:**
 
 **Link zu unserer Website:** https://trinkfit.wanaka.ch/
 
@@ -18,9 +18,9 @@ Ziel ist es, eine funktionale und visuell unterstützende Lösung zu entwickeln,
 
 ## 💡 Projektidee
 
-Die Idee basiert auf der Beobachtung, dass viele Menschen zu wenig trinken – besonders während Beschäftigungen durch den Tag. In Interviews mit zwei Zielpersonen wurde deutlich, dass visuelle Signale wie Licht (Ton wäre zu aggressiv) und ein möglichst automatischer Ablauf zum trinken animieren.
+Die Idee basiert auf der Beobachtung, dass viele Menschen zu wenig trinken – besonders während Beschäftigungen durch den Tag. In Interviews mit zwei Zielpersonen wurde deutlich, dass visuelle Signale wie Licht (Ton wäre zu aggressiv) und ein möglichst automatischer Ablauf zum Trinken animieren.
 
-TrinkFit erkennt Trinkvorgänge automatisch und bietet Feedback über Lichtsignale (LED-Ring) und ein OLED-Display. Zusätzlich werden die Daten an eine Datenbank übertragen und auf der Website grafisch dargestellt. Zusätzlich bietet die Website hilfreiche Tipps und Vorteile um mehr Wasser zu trinken.
+TrinkFit erkennt Trinkvorgänge automatisch und bietet Feedback über Lichtsignale (LED-Ring) und ein OLED-Display. Die Daten werden ausserdem an eine Datenbank übertragen und auf der Website grafisch dargestellt. Zusätzlich bietet die Website hilfreiche Tipps und Vorteile, um mehr Wasser zu trinken.
 
 **Unsere Idee haben wir zu Beginn des Projekts in einem Flussdiagramm aufgezeichnet:**
 ![Flussdiagramm_Trinkfit](images/Flussdiagramm_TrinkFit.png)
@@ -56,15 +56,15 @@ https://docs.google.com/document/d/1XEH3uDcnz3PhZMaaVluLnOC8TfT7FdvxlLkdgI5IRxk/
   - Erfolgssignal nach Trinkvorgang (grün)
   - Fehlerhinweis bei fehlgeschlagener Messung (rot)
 - Datenübertragung an eine Online-Datenbank
-- Visualisierung der Daten auf Website
+- Visualisierung der Daten auf der Website
 
-**Um das Projekt umzusetzen waren verschiedene Schritte nötig:**
+**Um das Projekt umzusetzen, waren verschiedene Schritte nötig:**
 1. Hardware aufbauen
 2. Gehäuse bauen
-2. Hardware programmieren
-3. Server aufsetzen 
-4. Datenbank aufsetzen und mit Hardware verbinden
-5. Website programmieren, mit Datenbank verbinden, Daten darauf auslesen und auf Server laden
+3. Hardware programmieren
+4. Server aufsetzen 
+5. Datenbank aufsetzen und mit Hardware verbinden
+6. Website programmieren, mit Datenbank verbinden, Daten daraufhin auslesen und auf Server laden
 
 **Unter diesem Link ist eine detaillierte Schritt-für-Schritt Bauanleitung abgespeichert, um das Projekt nachzubauen (inklusive Steckschema):**
 https://docs.google.com/document/d/1v_iRln1-3_Z1rBspjY5z-w0nKUgZ-AYMQeU4w6nC4Hc/edit?usp=drive_link
@@ -73,11 +73,11 @@ https://docs.google.com/document/d/1v_iRln1-3_Z1rBspjY5z-w0nKUgZ-AYMQeU4w6nC4Hc/
 
 ## Komponentenübersicht:
 
-**Für die Umsetzung unseres Projekt sind folgende Komponenten nötig:**
+**Für die Umsetzung unseres Projekts sind folgende Komponenten nötig:**
 
 | Komponente             | Funktion                                                       |
 |------------------------|----------------------------------------------------------------|
-| ESP32 Dev Board        | Mikrocontroller, führt Hauptprogramm aus, kommuniziert via WLAN |
+| ESP32 Dev Board        | Microcontroller, führt Hauptprogramm aus, kommuniziert via WLAN |
 | HX711 + Wägezelle      | Gewichtssensor zur Erkennung der Trinkmenge                    |
 | SSD1306 OLED Display   | Zeigt Hinweise und Statusmeldungen an                         |
 | WS2812B LED-Ring       | Gibt visuelles Feedback (Erinnerung, Erfolg etc.)              |
@@ -102,7 +102,7 @@ https://docs.google.com/document/d/1v_iRln1-3_Z1rBspjY5z-w0nKUgZ-AYMQeU4w6nC4Hc/
 | `chart_data.php`       | Serverlogik: Stellt gespeicherte Trinkdaten als JSON bereit    |
 | `chart.js`             | Visualisiert Daten auf der Website                             |
 | `tipps.js`             | Zeigt Trinktipps auf Website, Wechsel all 2 Minuten            |
-| `popup.js`             | Eingabe von Alter und Gewicht Users, Berechnung Wasserbedarf   |
+| `popup.js`             | Eingabe von Alter und Gewicht des Users, Berechnung Wasserbedarf   |
 
 
 #### Web-Frontend & Konfiguration
@@ -115,7 +115,7 @@ https://docs.google.com/document/d/1v_iRln1-3_Z1rBspjY5z-w0nKUgZ-AYMQeU4w6nC4Hc/
 | Images                 | Statische Inhalte zur Darstellung                              |
 
 
-Die Komponenten sind in Hardware, Protokolle und Software gegliedert und bilden gemeinsam das technische System hinter dem TrinkFit Pad. Die Programmlogik auf dem ESP32 kommuniziert über WLAN und HTTP mit dem Webserver, wo die Daten gespeichert und anschliessend visualisiert werden. Die Weboberfläche besteht aus HTML, CSS und JavaScript und ruft die Messdaten über PHP-Schnittstellen aus der Datenbank ab.
+Die Komponenten sind in Hardware, Protokolle und Software gegliedert und bilden gemeinsam das technische System hinter dem TrinkFit Pad. Die Programmlogik auf dem ESP32 kommuniziert über WLAN und HTTP mit dem Webserver, wo die Daten gespeichert und anschliessend visualisiert werden. Die Weboberfläche ist mit HTML, CSS und JavaScript aufgebaut. Die Messdaten werden über PHP-Schnittstellen aus der MySQL-Datenbank abgefragt und in Echtzeit visualisiert.
 
 **Das wird in der folgenden Grafik veranschaulicht:**
 
@@ -134,7 +134,7 @@ Der Ablauf ist als **Zustandsautomat** implementiert und umfasst die Phasen:
 - Trinken erkannt
 - Erinnerung aktivieren
 
-**Der vollständige Arduino Code ist hier zu finden:**
+**Der vollständige Arduino-Code ist hier zu finden:**
 https://drive.google.com/drive/folders/1Nao8af1tqWhV8pDMCVJr2XZtJIiHb1tH?usp=drive_link
 
 Die gesendeten Daten werden über eine PHP-API (`load.php`) an eine MySQL-Datenbank übermittelt.  
@@ -144,7 +144,7 @@ https://docs.google.com/document/d/1v_iRln1-3_Z1rBspjY5z-w0nKUgZ-AYMQeU4w6nC4Hc/
 
 ### Website
 
-Die Website wurde mit Visual Code programmiert und zeigt in Echtzeit die in der Datenbank erfassten Trinkmengen. ???
+Die Website wurde mit Visual Studio Code entwickelt. Sie zeigt die in der Datenbank gespeicherten Trinkmengen in Echtzeit an und visualisiert sie grafisch mittels JavaScript. ???
 
 Genauere Erläuterungen zu den Codes sind in den jeweiligen Code-Abschnitten im GitHub einszusehen.
 
@@ -156,7 +156,7 @@ Genauere Erläuterungen zu den Codes sind in den jeweiligen Code-Abschnitten im 
 Wir haben von Anfang an zügig mit dem Projekt gestartet, weil uns bewusst war, dass der Zeitplan wegen paralleler Projekte und anderer Verpflichtungen knapp wird. Durch eine klare Zielsetzung und gute Koordination konnten wir den Fortschritt hoch halten. Die Aufgaben wurden sinnvoll verteilt, sodass wir effizient arbeiten konnten. So gelang es uns, das Projekt rechtzeitig und vollständig fertigzustellen.
 
 #### Aufgabenverteilung
-Für uns war folgende Aufgabenverteilung am effizientisten. Wir haben uns aber natürlich gegenseitg im Bereich der jeweils anderen untersützt.
+Für uns war folgende Aufgabenverteilung am effizientesten. Wir haben uns aber natürlich gegenseitig im Bereich der jeweils anderen unterstützt.
 - Ideenfindung (beide)
 - UX Design, Persona, Stylesheet, MockUp Website (beide)
 - Hardware-Programmierung (Milena)
@@ -175,7 +175,7 @@ Wir haben alle Komponenten – wie die Trinkwaage und die Website – zunächst 
 - Auch die ursprüngliche Idee, das OLED-Display nur zur Gewichtsanzeige zu nutzen, wurde verworfen. Stattdessen verwenden wir es nun, um dem Nutzer klare Anweisungen zu geben – das macht das System deutlich intuitiver und produktionsreifer.
 
 #### Designentscheidungen
-Um das Breadboard mit den Kabeln zu verstecken und um das TrinkFit Pad handlicher zu machen, haben wir uns dazu entschieden, ein Gehäuse zu entwerfen. Dazu haben wir in Autodesk Fusion einen Entwurf erstellt, um das Gehäuse mit dem 3D Drucker auszudrucken.
+Um das Breadboard mit den Kabeln zu verstecken und um das TrinkFit Pad handlicher zu machen, haben wir uns dazu entschieden, ein Gehäuse zu entwerfen. Dazu haben wir in Autodesk Fusion einen Entwurf erstellt, um das Gehäuse mit dem 3D-Drucker auszudrucken.
 
 **Hier ein Bild von dem Entwurf in Autodesk Fusion:**
 ![Entwurf 3D-Modell Trinkfit](images/Autodesk_Fusion_Entwurf_Trinkfit.png)
@@ -183,27 +183,27 @@ Um das Breadboard mit den Kabeln zu verstecken und um das TrinkFit Pad handliche
 **Schliesslich haben wir das Gehäuse (einmal die obere Hälfte und einmal den Boden) in dem 3D-Drucker der Schule ausgedruckt:**
 ![Komponentenplan Trinkfit](images/3D_Drucker.gif)
 
-Da wir noch nie mit der Software gearbeitet haben und auch noch nie ein 3D-Modell entworfen haben, war es für uns eine sehr grosse Herausforderung, das in so kurzer Zeit umzusetzen. Aufgrund der Komplexität haben wir schlussendlich darauf verzichtet den Reset Button des Microcontrollers direkt mit dem Gehäuse zu verknüpfen. Dank einer zusätzlichen Beschriftung ist dessen Bedienung nun aber trotzdem benutzerfreundlich und intuitiv.
+Da wir noch nie mit der Software gearbeitet haben und auch noch nie ein 3D-Modell entworfen haben, war es für uns eine sehr grosse Herausforderung, das in so kurzer Zeit umzusetzen. Aufgrund der Komplexität haben wir schlussendlich darauf verzichtet, den Reset-Button des Microcontrollers direkt mit dem Gehäuse zu verknüpfen. Dank einer zusätzlichen Beschriftung ist dessen Bedienung nun aber trotzdem benutzerfreundlich und intuitiv.
 
 ![TrinkFit Reset Knopf](images/TrinkFit_Reset.jpg)
 
 Wir haben in dem Prozess sehr viel gelernt und sind dank der Hilfe von Jan zu einem tollen Ergebnis gekommen. 
 
-Für die Platte auf der Waage haben wir eine leicht durchsichtige Plastikplatte zugeschnitten und mit doppelseitigem Klebeband befestigt. Diese ist nicht nur wasserabweisend, sondern sieht auch sehr schön aus. Durch zusätzliche Dekoelemente wie das angemalte Logo und die Sticker gefällt uns das TrinkFit Pad optisch sehr gut.
+Für die Platte auf der Waage haben wir eine leicht durchsichtige Acrylplatte zugeschnitten und mit doppelseitigem Klebeband befestigt. Diese ist nicht nur wasserabweisend, sondern sieht auch sehr schön aus. Das TrinkFit Pad gefällt uns optisch sehr gut – unter anderem durch das bemalte Logo und die Sticker.
 
 ![TrinkFit Reset Knopf](images/TrinkFit_Platte.jpg)
 
 #### Inspiration
 
-Von dem Thema waren wir schnell begeistert, da wir beide bei unseren Eltern, die über 50 sind festgestellt haben, dass sie im Alltag zu wenig trinken. Aber auch wir kennen das Problem. Uns hat es motiviert, etwas zu entwickeln, das nicht nur unseren Eltern sondern auch uns selbst im Alltag nützen würde.
+Von dem Thema waren wir schnell begeistert, da wir beide bei unseren Eltern, die über 50 sind, festgestellt haben, dass sie im Alltag zu wenig trinken. Aber auch wir kennen das Problem. Uns hat es motiviert, etwas zu entwickeln, das nicht nur unseren Eltern sondern auch uns selbst im Alltag nützlich sein könnte.
 
 #### Fehlschläge und Umplanung
 
-- Beim Anschliessen des Sensors und der anderen Komponenten auf dem Breadboard, kam es gleich zweinmal vermutlich zu einem Kurzschluss, was den Microcontroller zerstört hat. Der Grund war, dass Stromzuflüsse falsch gesteckt wurden, wodurch auf dem Board vermutlich zu viel Strom floss. Zum Glück haben wir von Jan schnell einen Ersatz bekommen. 
+- Beim Anschliessen des Sensors und der anderen Komponenten auf dem Breadboard, kam es gleich zweimal vermutlich zu einem Kurzschluss, was den Microcontroller zerstört hat. Der Grund war, dass Stromzuflüsse falsch gesteckt wurden, wodurch auf dem Board vermutlich zu viel Strom floss. Zum Glück haben wir von Jan schnell einen Ersatz bekommen. 
 
-- Leider ist auch die erste Waage, die wir auf AliExpress bestellt haben kaputt gegangen. Die Kabelverbindungen am HX711 Sensor lösten sich und da wir keine Erfahrung im Löten haben, konnten wir ihn nicht flicken. Wir haben schliesslich eine stabilere Waage neu bestellt, die nun im Einsatz ist.
+- Leider ist auch die erste Waage, die wir auf AliExpress bestellt haben kaputtgegangen. Die Kabelverbindungen am HX711 Sensor lösten sich und da wir keine Erfahrung im Löten haben, konnten wir ihn nicht flicken. Wir haben schliesslich eine stabilere Waage neu bestellt, die nun im Einsatz ist.
 
-- Im Prozess der Datenbankerstellung haben wir einmal ausversehen das Dokument db_config.php auf GitHub geladen, da wir den Namen des Dokuments angepasst, aber es nicht in gitignore geändert haben. Anschliessend haben wir das Dokument über den Task Manager von Visual Codes wieder aus GitHub entfernt. Zudem haben wir das Login und Passwort angepasst, um die Sicherheit zu gewährleisten. Das selbe ist und mit dem sftp.json File passiert, da wir ausversehen im .gitignore etwas angepasst hatten. Auch hier haben wir das Dokument direkt aus GitHub entfernt und die Logindaten angepasst. Gemäss Absprache mit Jan Fiess reicht dieses Vorgehen im Rahmen dieses Projektes aus.
+- Im Prozess der Datenbankerstellung haben wir einmal aus Versehen das Dokument db_config.php auf GitHub geladen, da wir den Namen des Dokuments angepasst, aber es nicht in gitignore geändert haben. Anschliessend haben wir das Dokument über den Task Manager von Visual Studio Code wieder aus GitHub entfernt. Zudem haben wir das Login und Passwort angepasst, um die Sicherheit zu gewährleisten. Dasselbe ist und mit dem sftp.json File passiert, da wir ausversehen im .gitignore etwas angepasst hatten. Auch hier haben wir das Dokument direkt aus GitHub entfernt und die Logindaten angepasst. Gemäss Absprache mit Jan Fiess reicht dieses Vorgehen im Rahmen dieses Projektes aus.
 
 #### Challenges
 Die grösste Herausforderung war das Programmieren der Waage. Es musste zuerst eine Logik für stabile Gewichtserkennung entwickelt und im Code umgesetzt werden. Fehler traten anfangs häufig auf – etwa durch Schwankungen oder falsche Gewichtsdifferenzen. Durch konsequentes Testen und Anpassen kamen wir schrittweise zur jetzigen, zuverlässigen Lösung. Auch das Zusammenspiel von Messung, Anzeige, LED-Steuerung und Serverkommunikation war technisch komplex.
@@ -220,7 +220,7 @@ Die grösste Herausforderung war das Programmieren der Waage. Es musste zuerst e
 - Die Waage kann schwanken – vor allem beim ersten Start, bei unruhigem Untergrund, schwerem Trinkgefäss oder schwacher Stromzufuhr (z. B. schwache Powerbank). Mit Gehäuse ist die Stabilität deutlich besser.
 - Bei längerem Betrieb kann das Gewicht langsam nach unten driften, obwohl sich am Glas nichts verändert hat. Das ist meist unproblematisch: Nach 3 Minuten wird automatisch ein neues Referenzgewicht gesetzt. Wenn der Drift zu stark ist, denkt das System aber fälschlicherweise, dass das Glas entfernt wurde – in diesem Fall hilft ein Reset.
 - Die Waage reagiert leicht verzögert, da mehrere stabile Messwerte geprüft werden. Das erhöht aber die Genauigkeit.
-- Trotz diesen kleinen Bugs sind wir mit der Genauigkeit der Waage sehr zufrieden. Die Trinkmengenmessung ist zuverlässig. Unsere Tests über 3 Wochen zeigen Abweichungen von ca. ±10 ml. Falsche Einträge in der Datenbank kommen kaum vor – dank stabiler Erkennung und Sicherheitsprüfungen. Weitere Bugs sind uns nicht bekannt. 
+- Trotz diesen kleinen Bugs sind wir mit der Genauigkeit der Trinkmengenmessung der Waage sehr zufrieden. Unsere Tests über 3 Wochen zeigen Abweichungen von ca. ±10 ml. Falsche Einträge in der Datenbank kommen kaum vor – dank stabiler Erkennung und Sicherheitsprüfungen. Weitere Bugs sind uns nicht bekannt. 
 
 #### Mögliche Erweiterungen für TrinkFit
 
@@ -230,7 +230,7 @@ Die grösste Herausforderung war das Programmieren der Waage. Es musste zuerst e
 
 #### Hilfsmittel
 
-- Für die Umsetzung des Projekts wurde ChatGPT als Hilfsmittel in fast allen Projektphasen eingesetzt. Besonders hilfreich war ChatGPT bei der Programmierung des Arduino Codes. So konnte der Code Schritt für Schritt überarbeitet und weiterentwickelt werden. Auch bei der Umsetzung der Website mittels PHP, JavaScript, HTML und CSS kam ChatGPT zum Einsatz. Zudem auch getwaves.io zur Generierung der Wellen im Header und Footer Bereich. Die KI hat dabei Schritt für Schritt beim Aufbau, der Umsetzung und Fehlersuche geholfen. ChatGPT wurde auch genutzt, um Teile der Dokumenation zu schreiben oder um sie auf die Rechtschreibung zu überprüfen. Allerdings lieferte ChatGPT bei der Textgenerierung der Dokumentation meist keine zufriedenstellende Ergebnisse. So konnten die Texte zwar als Ausgangslage genutzt, mussten aber von Hand optimiert werden.
+- Für die Umsetzung des Projekts wurde ChatGPT als Hilfsmittel in fast allen Projektphasen eingesetzt. Besonders hilfreich war ChatGPT bei der Programmierung des Arduino Codes. So konnte der Code Schritt für Schritt überarbeitet und weiterentwickelt werden. Auch bei der Umsetzung der Website mittels PHP, JavaScript, HTML und CSS kam ChatGPT zum Einsatz. Zudem auch getwaves.io zur Generierung der Wellen im Header und Footer Bereich. Die KI hat dabei Schritt für Schritt beim Aufbau, der Umsetzung und Fehlersuche geholfen. ChatGPT wurde auch für die Dokumentation eingesetzt – etwa zur Rechtschreibprüfung oder zur Texterstellung. Diese Texte mussten jedoch fast immer manuell überarbeitet werden, da sie stilistisch nicht überzeugten.
 
 ---
 
@@ -247,6 +247,7 @@ Im Rahmen dieses Projekts haben wir sehr viel über Physical Computing gelernt. 
 
 FH Graubünden  
 Modul: Interaktive Medien 4 – Frühling 2025
+Dozent: Jan Fiess
 
 ---
 
