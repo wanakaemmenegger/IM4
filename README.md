@@ -191,6 +191,8 @@ Wir haben in dem Prozess sehr viel gelernt und sind dank der Hilfe von Jan zu ei
 
 Für die Platte auf der Waage haben wir eine leicht durchsichtige Plastikplatte zugeschnitten und mit doppelseitigem Klebeband befestigt. Diese ist nicht nur wasserabweisend, sondern sieht auch sehr schön aus. Durch zusätzliche Dekoelemente wie das angemalte Logo und die Sticker gefällt uns das TrinkFit Pad optisch sehr gut.
 
+![TrinkFit Reset Knopf](images/TrinkFit_Platte.jpg)
+
 #### Inspiration
 
 Von dem Thema waren wir schnell begeistert, da wir beide bei unseren Eltern, die über 50 festgestellt haben, das sie im Alltag zu wenig trinken. Aber auch wir kennen das Problem. Uns hat es motiviert, etwas zu entwickeln, das nicht nur unseren Eltern sondern auch uns selbst im Alltag nützen würde.
