@@ -42,8 +42,6 @@ TrinkFit erkennt Trinkvorgänge automatisch und bietet Feedback über Lichtsigna
 **Eine detaillierte Bedienungsanleitung ist unter folgendem Link zu finden:**
 https://docs.google.com/document/d/1XEH3uDcnz3PhZMaaVluLnOC8TfT7FdvxlLkdgI5IRxk/edit?usp=sharing
 
-**So erinnert das TrinkFit Pad an das Trinken:**
-Gif einfügen
 ---
 
 ## Technische Umsetzung
