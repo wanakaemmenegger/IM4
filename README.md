@@ -18,9 +18,9 @@ Ziel ist es, eine funktionale und visuell unterstützende Lösung zu entwickeln,
 
 ## 💡 Projektidee
 
-Die Idee basiert auf der Beobachtung, dass viele Menschen zu wenig trinken – besonders während Beschäftigungen durch den Tag. In Interviews mit zwei Zielpersonen wurde deutlich, dass visuelle Signale wie Licht (Ton wäre zu aggressiv) und ein möglichst automatischer Ablauf zum Trinken animieren.
+Die Idee basiert auf der Beobachtung, dass viele Menschen zu wenig trinken – besonders während Beschäftigungen durch den Tag. In Interviews mit zwei Zielpersonen wurde deutlich, dass visuelle Signale wie Licht (Audio wäre zu aggressiv) und ein möglichst automatischer Ablauf zum Trinken animieren.
 
-TrinkFit erkennt Trinkvorgänge automatisch und bietet Feedback über Lichtsignale (LED-Ring) und ein OLED-Display. Die Daten werden ausserdem an eine Datenbank übertragen und auf der Website grafisch dargestellt. Zusätzlich bietet die Website hilfreiche Tipps und Vorteile, um mehr Wasser zu trinken.
+TrinkFit erkennt Trinkvorgänge automatisch und bietet Feedback über Lichtsignale (LED-Ring) und ein OLED-Display. Die Trinkmengen werden an eine Datenbank übertragen und auf der Website grafisch dargestellt. Zusätzlich bietet die Website hilfreiche Tipps und Vorteile, um mehr Wasser zu trinken.
 
 **Unsere Idee haben wir zu Beginn des Projekts in einem Flussdiagramm aufgezeichnet:**
 ![Flussdiagramm_Trinkfit](images/Flussdiagramm_TrinkFit.png)
@@ -66,7 +66,7 @@ Gif einfügen
 3. Hardware programmieren
 4. Server aufsetzen 
 5. Datenbank aufsetzen und mit Hardware verbinden
-6. Website programmieren, mit Datenbank verbinden, Daten daraufhin auslesen und auf Server laden
+6. Website programmieren, mit Datenbank verbinden, Daten darstellen und auf Server laden
 
 **Unter diesem Link ist eine detaillierte Schritt-für-Schritt Bauanleitung abgespeichert, um das Projekt nachzubauen (inklusive Steckschema):**
 https://docs.google.com/document/d/1v_iRln1-3_Z1rBspjY5z-w0nKUgZ-AYMQeU4w6nC4Hc/edit?usp=drive_link
@@ -143,9 +143,13 @@ Die gesendeten Daten werden über eine PHP-API (`load.php`) an eine MySQL-Datenb
 
 ### Website
 
-Die Website wurde mit Visual Studio Code entwickelt. Sie zeigt die in der Datenbank gespeicherten Trinkmengen in Echtzeit an und visualisiert sie grafisch mittels JavaScript. ???
+Die Website wurde mit HTML, CSS, JavaScript und PHP im Programm Visual Studio Code entwickelt. Die ersten Entwüfe der Website wurden im Figma gemacht. Für die Zusammenarbeit kam GitHub zum Einsatz. 
 
-Genauere Erläuterungen zu den Codes sind in den jeweiligen Code-Abschnitten im GitHub einszusehen.
+Die Website zeigt die in der Datenbank gespeicherten Trinkmengen in Echtzeit an und visualisiert sie grafisch mittels JavaScript. Weiter werden die Funktionen des TrinkFit Pads dem User erklärt, es werden Tipps zum mehr Trinken eingeblendet sowie die Vorteile von genügend Trinken. Öffnet man die Website, erscheint nach 4 Sekunden ein PopUp, welches das Gewicht und Alter des User abfragt. Daraus wird anhand einer hinterlegten Tabelle die täglich benötigte Trinkmenge berechnet. Bei Bedarf erhöht sich der maximale Trinkwert in der Wochen- und Tagesstatistik jeweils im Halbliter-Schritt, damit auch Trink-Ziele über 3 Liter visualisiert werden können.
+
+Die gesamte Website ist responsive aufgebaut.
+
+Genauere Erläuterungen zu den verwendeten Codes sind in den jeweiligen Code-Abschnitten im GitHub einszusehen.
 
 **Zusätzliche Erklärungen zu den Codes sind im Anhang der Schritt-für-Schritt Bauanleitung aufgeführt:**
 https://docs.google.com/document/d/1v_iRln1-3_Z1rBspjY5z-w0nKUgZ-AYMQeU4w6nC4Hc/edit?usp=drive_link
@@ -171,10 +175,12 @@ Wir haben alle Komponenten – wie die Trinkwaage und die Website – zunächst 
 
 #### Verworfene Lösungsansätze
 - Grundsätzlich haben wir uns sehr genau an unsere ursprüngliche Idee gehalten, die wir im Screen Flow festgehalten hatten. Einzig bei der Programmierung der Waage haben sich einige andere Lösungswege als sinnvoller erwiesen.
-- Ursprünglich wollten wir die Waage mit einem fixen Glas kalibrieren und dessen Gewicht jeweils abziehen. Diese Methode erwies sich jedoch als unpraktisch, da man dann immer genau dasselbe Glas verwenden müsste.
+- Ursprünglich wollten wir die Waage mit einem fixen Glas kalibrieren und dessen Gewicht jeweils abziehen. Diese Methode erwies sich jedoch als unpraktisch, da man dann immer genau dasselbe Glas verwenden müsste. Die ursprüngliche Annahme kam von einer Falschüberlegung unsererseits.
 - Stattdessen berechnet die Waage nun die Trinkmenge, indem sie nach dem Aufstellen eines beliebigen vollen Glases das Gewicht speichert und beim Trinken die Differenz misst. Diese Methode funktioniert flexibler und genauer – besonders bei leichten Gewichtsschwankungen oder Driften der Waage.
 - Wir hatten ausserdem die Idee, die Waage automatisch oder per Knopfdruck auf null zu setzen (Tara), um Schwankungen zu kompensieren. Das hat aber nicht zuverlässig funktioniert und führte zu ungenauen Messungen. Die Lösung war, die Waage über den Reset-Knopf neu zu starten – das hat sich als deutlich stabiler erwiesen.
 - Auch die ursprüngliche Idee, das OLED-Display nur zur Gewichtsanzeige zu nutzen, wurde verworfen. Stattdessen verwenden wir es nun, um dem Nutzer klare Anweisungen zu geben – das macht das System deutlich intuitiver und produktionsreifer.
+- Die Umsetzung der Website konnten wir ziemlich genau wie geplant machen. Das PopUp war anfänglich mehr als nice-to-have angedacht, da die Umsetzung mittels JavaScript aber gut machbar war, haben wir dieses fix eingebaut und so programmiert, dass individuelle Werte eingeben und die Trinkziele dementsprechend berechnet werden.
+- Im Figma hatten wir einen Farbverlauf in unseren Charts geplant. Wir haben es auf mehrere Wege probiert, diese wie geplant umzusetzen. Da dieses Style-Element leider nicht funktioniert hat, haben wir auf einen blauen Balken gesetzt.
 
 #### Designentscheidungen
 Um das Breadboard mit den Kabeln zu verstecken und um das TrinkFit Pad handlicher zu machen, haben wir uns dazu entschieden, ein Gehäuse zu entwerfen. Dazu haben wir in Autodesk Fusion einen Entwurf erstellt, um das Gehäuse mit dem 3D-Drucker auszudrucken.
@@ -215,7 +221,7 @@ Die grösste Herausforderung war das Programmieren der Waage. Es musste zuerst e
 - Der sichere Umgang mit der Stromversorgung und der Schutz von sensiblen Teilen (Microcontroller) war ein wichtiges Learning für uns. Nun überlegen wir gut, wo der Strom fliesst, bevor wir etwas auf dem Breadboard ein- und umstecken.
 - Die Arbeit mit GitHub und der versehentliche Upload sensibler Dateien hat uns deutlich gemacht, wie wichtig sorgfältiger Umgang mit Code und Sicherheit im Web ist.
 - Beim Aufbau des Systems mussten wir lernen, wie man verschiedene Komponenten (Waage, Display, LEDs, WLAN, Server) in einem funktionierenden Gesamtsystem vereint.
-Auch in der Webprogrammierung konnten wir unser Wissen aus dem letzten Semester gezielt anwenden und vertiefen – insbesondere bei der Kommunikation zwischen PHP, JavaScript und MySQL.
+Auch in der Webprogrammierung konnten wir unser Wissen aus dem letzten Semester gezielt anwenden und vertiefen.
 - Insgesamt haben wir viele neue Fähigkeiten in den Bereichen Hardware, Webtechnologien, Microcontroller-Programmierung und im Projektmanagement entwickelt – und auch, wie man mit Fehlschlägen umgeht.
 
 #### Known Bugs
@@ -223,7 +229,9 @@ Auch in der Webprogrammierung konnten wir unser Wissen aus dem letzten Semester 
 - Die Waage kann schwanken – vor allem beim ersten Start, bei unruhigem Untergrund, schwerem Trinkgefäss oder schwacher Stromzufuhr (z. B. schwache Powerbank). Mit Gehäuse ist die Stabilität deutlich besser.
 - Bei längerem Betrieb kann das Gewicht langsam nach unten driften, obwohl sich am Glas nichts verändert hat. Das ist meist unproblematisch: Nach 3 Minuten wird automatisch ein neues Referenzgewicht gesetzt. Wenn der Drift zu stark ist, denkt das System aber fälschlicherweise, dass das Glas entfernt wurde – in diesem Fall hilft ein Reset.
 - Die Waage reagiert leicht verzögert, da mehrere stabile Messwerte geprüft werden. Das erhöht aber die Genauigkeit.
-- Trotz diesen kleinen Bugs sind wir mit der Genauigkeit der Trinkmengenmessung der Waage sehr zufrieden. Unsere Tests über 3 Wochen zeigen Abweichungen von ca. ±10 ml. Falsche Einträge in der Datenbank kommen kaum vor – dank stabiler Erkennung und Sicherheitsprüfungen. Weitere Bugs sind uns nicht bekannt. 
+- Trotz diesen kleinen Bugs sind wir mit der Genauigkeit der Trinkmengenmessung der Waage sehr zufrieden. Unsere Tests über 3 Wochen zeigen Abweichungen von ca. ±10 ml. Falsche Einträge in der Datenbank kommen kaum vor – dank stabiler Erkennung und Sicherheitsprüfungen. 
+- Die Website ist responsive, allerdings könnte beim Wechsel von der Wochen- zur Tageschart die nachfolgenden Elemente in der Mobile noch mehr nachrücken.
+- Weitere Bugs sind uns nicht bekannt.
 
 #### Mögliche Erweiterungen für TrinkFit
 
@@ -239,7 +247,7 @@ Auch in der Webprogrammierung konnten wir unser Wissen aus dem letzten Semester 
 
 ## Fazit
 
-Im Rahmen dieses Projekts haben wir sehr viel über Physical Computing gelernt. Das Thema war für uns vollkommen neu, weshalb wir uns intensiv damit beschäftigen mussten. Das hat zwar sehr viel Zeit in Anspruch genommen, hat aber auch viel Spass gemacht. Das TrinkFit Pad ist aus unserer Sicht schlussendlich noch besser herausgekommen, als wir es uns vorgestellt haben.
+Im Rahmen dieses Projekts haben wir sehr viel über Physical Computing gelernt. Das Thema war für uns vollkommen neu, weshalb wir uns intensiv damit beschäftigen mussten. Das hat zwar sehr viel Zeit in Anspruch genommen, hat aber auch viel Spass gemacht. Das TrinkFit Pad ist aus unserer Sicht schlussendlich noch besser geworden, als wir es uns vorgestellt haben.
 
 ---
 
