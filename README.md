@@ -195,7 +195,7 @@ Für die Platte auf der Waage haben wir eine leicht durchsichtige Plastikplatte 
 
 #### Inspiration
 
-Von dem Thema waren wir schnell begeistert, da wir beide bei unseren Eltern, die über 50 festgestellt haben, das sie im Alltag zu wenig trinken. Aber auch wir kennen das Problem. Uns hat es motiviert, etwas zu entwickeln, das nicht nur unseren Eltern sondern auch uns selbst im Alltag nützen würde.
+Von dem Thema waren wir schnell begeistert, da wir beide bei unseren Eltern, die über 50 sind festgestellt haben, dass sie im Alltag zu wenig trinken. Aber auch wir kennen das Problem. Uns hat es motiviert, etwas zu entwickeln, das nicht nur unseren Eltern sondern auch uns selbst im Alltag nützen würde.
 
 #### Fehlschläge und Umplanung
 
