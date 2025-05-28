@@ -117,7 +117,7 @@ https://docs.google.com/document/d/1v_iRln1-3_Z1rBspjY5z-w0nKUgZ-AYMQeU4w6nC4Hc/
 
 Die Komponenten sind in Hardware, Protokolle und Software gegliedert und bilden gemeinsam das technische System hinter dem TrinkFit Pad. Die Programmlogik auf dem ESP32 kommuniziert über WLAN und HTTP mit dem Webserver, wo die Daten gespeichert und anschliessend visualisiert werden. Die Weboberfläche ist mit HTML, CSS und JavaScript aufgebaut. Die Messdaten werden über PHP-Schnittstellen aus der MySQL-Datenbank abgefragt und in Echtzeit visualisiert.
 
-**Das wird in der folgenden Grafik veranschaulicht:**
+**Das wird in dem Komponentenplan veranschaulicht:**
 
 ![Komponentenplan Trinkfit](images/Komponentenplan_TrinkFit.png)
 ---
@@ -139,14 +139,14 @@ https://drive.google.com/drive/folders/1Nao8af1tqWhV8pDMCVJr2XZtJIiHb1tH?usp=dri
 
 Die gesendeten Daten werden über eine PHP-API (`load.php`) an eine MySQL-Datenbank übermittelt.  
 
-**Genauere Erläuterungen zu allen Codes sind im Anhang der Schritt-für-Schritt Bauanleitung aufgeführt:**
-https://docs.google.com/document/d/1v_iRln1-3_Z1rBspjY5z-w0nKUgZ-AYMQeU4w6nC4Hc/edit?usp=drive_link
-
 ### Website
 
 Die Website wurde mit Visual Studio Code entwickelt. Sie zeigt die in der Datenbank gespeicherten Trinkmengen in Echtzeit an und visualisiert sie grafisch mittels JavaScript. ???
 
 Genauere Erläuterungen zu den Codes sind in den jeweiligen Code-Abschnitten im GitHub einszusehen.
+
+**Zusätzliche Erklärungen zu den Codes sind im Anhang der Schritt-für-Schritt Bauanleitung aufgeführt:**
+https://docs.google.com/document/d/1v_iRln1-3_Z1rBspjY5z-w0nKUgZ-AYMQeU4w6nC4Hc/edit?usp=drive_link
 
 ---
 
@@ -199,11 +199,11 @@ Von dem Thema waren wir schnell begeistert, da wir beide bei unseren Eltern, die
 
 #### Fehlschläge und Umplanung
 
-- Beim Anschliessen des Sensors und der anderen Komponenten auf dem Breadboard, kam es gleich zweimal vermutlich zu einem Kurzschluss, was den Microcontroller zerstört hat. Der Grund war, dass Stromzuflüsse falsch gesteckt wurden, wodurch auf dem Board vermutlich zu viel Strom floss. Zum Glück haben wir von Jan schnell einen Ersatz bekommen. 
+- Beim Anschliessen des Sensors und der anderen Komponenten auf dem Breadboard kam es gleich zweimal zu einem Kurzschluss, der vermutlich den Mikrocontroller zerstörte. Ursache waren falsch gesteckte Stromverbindungen, durch die wohl zu viel Strom über das Board floss. Zum Glück erhielten wir von Jan schnell Ersatz.
 
 - Leider ist auch die erste Waage, die wir auf AliExpress bestellt haben kaputtgegangen. Die Kabelverbindungen am HX711 Sensor lösten sich und da wir keine Erfahrung im Löten haben, konnten wir ihn nicht flicken. Wir haben schliesslich eine stabilere Waage neu bestellt, die nun im Einsatz ist.
 
-- Im Prozess der Datenbankerstellung haben wir einmal aus Versehen das Dokument db_config.php auf GitHub geladen, da wir den Namen des Dokuments angepasst, aber es nicht in gitignore geändert haben. Anschliessend haben wir das Dokument über den Task Manager von Visual Studio Code wieder aus GitHub entfernt. Zudem haben wir das Login und Passwort angepasst, um die Sicherheit zu gewährleisten. Dasselbe ist und mit dem sftp.json File passiert, da wir ausversehen im .gitignore etwas angepasst hatten. Auch hier haben wir das Dokument direkt aus GitHub entfernt und die Logindaten angepasst. Gemäss Absprache mit Jan Fiess reicht dieses Vorgehen im Rahmen dieses Projektes aus.
+- Im Prozess der Datenbankerstellung haben wir einmal aus Versehen das Dokument db_config.php auf GitHub geladen, da wir den Namen des Dokuments angepasst, aber es nicht in gitignore geändert haben. Anschliessend haben wir das Dokument über den Task Manager von Visual Studio Code wieder aus GitHub entfernt. Zudem haben wir das Login und Passwort angepasst, um die Sicherheit zu gewährleisten. Dasselbe ist und mit dem sftp.json File passiert, da wir aus Versehen im .gitignore etwas angepasst hatten. Auch hier haben wir das Dokument direkt aus GitHub entfernt und die Logindaten angepasst. Gemäss Absprache mit Jan Fiess reicht dieses Vorgehen im Rahmen dieses Projektes aus.
 
 #### Challenges
 Die grösste Herausforderung war das Programmieren der Waage. Es musste zuerst eine Logik für stabile Gewichtserkennung entwickelt und im Code umgesetzt werden. Fehler traten anfangs häufig auf – etwa durch Schwankungen oder falsche Gewichtsdifferenzen. Durch konsequentes Testen und Anpassen kamen wir schrittweise zur jetzigen, zuverlässigen Lösung. Auch das Zusammenspiel von Messung, Anzeige, LED-Steuerung und Serverkommunikation war technisch komplex.
@@ -213,6 +213,7 @@ Die grösste Herausforderung war das Programmieren der Waage. Es musste zuerst e
 - Der sichere Umgang mit der Stromversorgung und der Schutz von sensiblen Teilen (Microcontroller) war ein wichtiges Learning für uns. Nun überlegen wir gut, wo der Strom fliesst, bevor wir etwas auf dem Breadboard ein- und umstecken.
 - Die Arbeit mit GitHub und der versehentliche Upload sensibler Dateien hat uns deutlich gemacht, wie wichtig sorgfältiger Umgang mit Code und Sicherheit im Web ist.
 - Beim Aufbau des Systems mussten wir lernen, wie man verschiedene Komponenten (Waage, Display, LEDs, WLAN, Server) in einem funktionierenden Gesamtsystem vereint.
+Auch in der Webprogrammierung konnten wir unser Wissen aus dem letzten Semester gezielt anwenden und vertiefen – insbesondere bei der Kommunikation zwischen PHP, JavaScript und MySQL.
 - Insgesamt haben wir viele neue Fähigkeiten in den Bereichen Hardware, Webtechnologien, Microcontroller-Programmierung und im Projektmanagement entwickelt – und auch, wie man mit Fehlschlägen umgeht.
 
 #### Known Bugs
@@ -245,9 +246,9 @@ Im Rahmen dieses Projekts haben wir sehr viel über Physical Computing gelernt. 
 - **Wanaka Emmenegger**
 - **Milena Stadelmann** 
 
-FH Graubünden  
-Modul: Interaktive Medien 4 – Frühling 2025
-Dozent: Jan Fiess
+- FH Graubünden  
+- Modul: Interaktive Medien 4 – Frühling 2025
+- Dozent: Jan Fiess
 
 ---
 
