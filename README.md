@@ -9,6 +9,7 @@ Ziel ist es, eine funktionale und visuell unterstützende Lösung zu entwickeln,
 
 
 **Wie das Trinkfit Pad funktioniert sieht man in diesem Video:**
+
 [![Ansehen auf YouTube](https://img.youtube.com/vi/dQw4w9WgXcQ/0.jpg)](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 
 
