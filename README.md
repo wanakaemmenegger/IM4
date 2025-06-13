@@ -69,7 +69,7 @@ TrinkFit erkennt Trinkvorgänge automatisch und bietet Feedback über Lichtsigna
 5. Datenbank aufsetzen und mit Hardware verbinden
 6. Website programmieren, mit Datenbank verbinden, Daten darstellen und auf Server laden
 
-[**Detaillierte Schritt-für-Schritt Bauanleitung, um das Projekt nachzubauen (inklusive Steckschema)**(https://docs.google.com/document/d/1v_iRln1-3_Z1rBspjY5z-w0nKUgZ-AYMQeU4w6nC4Hc/edit?usp=drive_link)
+[**Detaillierte Schritt-für-Schritt Bauanleitung, um das Projekt nachzubauen inklusive Steckschema**(https://docs.google.com/document/d/1v_iRln1-3_Z1rBspjY5z-w0nKUgZ-AYMQeU4w6nC4Hc/edit?usp=drive_link)
 
 ![Steckschema Trinkfit](images/Steckplan_Trinkfit.png)
 
