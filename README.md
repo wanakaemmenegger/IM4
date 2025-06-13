@@ -74,7 +74,7 @@ https://docs.google.com/document/d/1v_iRln1-3_Z1rBspjY5z-w0nKUgZ-AYMQeU4w6nC4Hc/
 
 ![Steckschema Trinkfit](images/Steckplan_Trinkfit.png)
 
-## Komponentenübersicht:
+## Komponentenübersicht
 
 **Für die Umsetzung unseres Projekts sind folgende Komponenten nötig:**
 
