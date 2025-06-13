@@ -11,7 +11,7 @@ Ziel ist es, eine funktionale und visuell unterstützende Lösung zu entwickeln,
 **Wie das Trinkfit Pad funktioniert sieht man in diesem Video:**
 
 
-
+[![Video ansehen](https://img.youtube.com/vi/7_neYtehy14/0.jpg)](https://youtu.be/7_neYtehy14)
 
 **Link zu unserer Website:** https://trinkfit.wanaka.ch/
 
