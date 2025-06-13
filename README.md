@@ -8,15 +8,13 @@ Leistungsnachweis IM4
 Ziel ist es, eine funktionale und visuell unterstützende Lösung zu entwickeln, die Nutzer:innen über 50 motiviert, über den Tag hinweg ausreichend zu trinken – ohne manuelles Eintragen auf dem Smartphone.
 
 
-**Wie das Trinkfit Pad funktioniert sieht man in diesem Video:** (klicke um das Video abzuspielen) 
+**Wie das Trinkfit Pad funktioniert sieht man in diesem Video:** [Video ansehen auf YouTube](https://youtu.be/7_neYtehy14)
 
 
 [![Video ansehen](https://img.youtube.com/vi/7_neYtehy14/0.jpg)](https://youtu.be/7_neYtehy14)
 
-[Video ansehen auf YouTube](https://youtu.be/7_neYtehy14)
 
-
-**Link zu unserer Website:** https://trinkfit.wanaka.ch/
+[**Link zu unserer Website**](https://trinkfit.wanaka.ch/)
 
 ![TrinkFit Produkt](images/TrinkFit_Produkt.jpg)
 
@@ -45,8 +43,7 @@ TrinkFit erkennt Trinkvorgänge automatisch und bietet Feedback über Lichtsigna
 6. Beobachte deinen Fortschritt hier online und trink dich fit.
 7. Vergessen zu trinken? Mit einem Blinken erinnert dich das TrinkFit Pad nach zwei Stunden daran. Sobald du trinkst, hört es wieder auf.
 
-**Eine detaillierte Bedienungsanleitung ist unter folgendem Link zu finden:**
-https://docs.google.com/document/d/1XEH3uDcnz3PhZMaaVluLnOC8TfT7FdvxlLkdgI5IRxk/edit?usp=sharing
+[**Detaillierte Bedienungsanleitung**](https://docs.google.com/document/d/1XEH3uDcnz3PhZMaaVluLnOC8TfT7FdvxlLkdgI5IRxk/edit?usp=sharing)
 
 ---
 
@@ -123,7 +120,7 @@ https://docs.google.com/document/d/1v_iRln1-3_Z1rBspjY5z-w0nKUgZ-AYMQeU4w6nC4Hc/
 
 Die Komponenten sind in Hardware, Protokolle und Software gegliedert und bilden gemeinsam das technische System hinter dem TrinkFit Pad. Die Programmlogik auf dem ESP32 kommuniziert über WLAN und HTTP mit dem Webserver, wo die Daten gespeichert und anschliessend visualisiert werden. Die Weboberfläche ist mit HTML, CSS und JavaScript aufgebaut. Die Messdaten werden über PHP-Schnittstellen aus der MySQL-Datenbank abgefragt und in Echtzeit visualisiert.
 
-**Das wird in dem Komponentenplan veranschaulicht:**
+**Das wird im Komponentenplan veranschaulicht:**
 
 ![Komponentenplan Trinkfit](images/Komponentenplan_TrinkFit.png)
 ---
@@ -140,8 +137,7 @@ Der Ablauf ist als **Zustandsautomat** implementiert und umfasst die Phasen:
 - Trinken erkannt
 - Erinnerung aktivieren
 
-**Der vollständige Arduino-Code ist hier zu finden:**
-https://drive.google.com/drive/folders/1Nao8af1tqWhV8pDMCVJr2XZtJIiHb1tH?usp=drive_link
+[**Vollständiger Arduino-Code**](https://drive.google.com/drive/folders/1Nao8af1tqWhV8pDMCVJr2XZtJIiHb1tH?usp=drive_link)
 
 Die gesendeten Daten werden über eine PHP-API (`load.php`) an eine MySQL-Datenbank übermittelt.  
 
@@ -155,8 +151,7 @@ Die gesamte Website ist responsive aufgebaut.
 
 Genauere Erläuterungen zu den verwendeten Codes sind in den jeweiligen Code-Abschnitten im GitHub einszusehen.
 
-**Zusätzliche Erklärungen zu den Codes sind im Anhang der Schritt-für-Schritt Bauanleitung aufgeführt:**
-https://docs.google.com/document/d/1v_iRln1-3_Z1rBspjY5z-w0nKUgZ-AYMQeU4w6nC4Hc/edit?usp=drive_link
+[**Zusätzliche Erklärungen zu den Codes sind im Anhang der Schritt-für-Schritt Bauanleitung aufgeführt**](https://docs.google.com/document/d/1v_iRln1-3_Z1rBspjY5z-w0nKUgZ-AYMQeU4w6nC4Hc/edit?usp=drive_link)
 
 ---
 
@@ -169,7 +164,8 @@ Wir haben von Anfang an zügig mit dem Projekt gestartet, weil uns bewusst war, 
 Für uns war folgende Aufgabenverteilung am effizientesten. Wir haben uns aber natürlich gegenseitig im Bereich der jeweils anderen unterstützt.
 - Ideenfindung (beide)
 - UX Design, Persona, Stylesheet, MockUp Website (beide)
-- Hardware-Programmierung (Milena)
+- Hardware-Programmierung inkl. Daten in Datenbank speichern (Milena)
+- Hosting und Server aufsetzen (Wanaka)
 - Website-Darstellung (Wanaka)
 - Produktdesign (Milena)
 - Dokumentation (beide)
