@@ -8,7 +8,7 @@ Leistungsnachweis IM4
 Ziel ist es, eine funktionale und visuell unterstützende Lösung zu entwickeln, die Nutzer:innen über 50 motiviert, über den Tag hinweg ausreichend zu trinken – ohne manuelles Eintragen auf dem Smartphone.
 
 
-**Wie das Trinkfit Pad funktioniert sieht man in diesem Video:** [Video ansehen auf YouTube](https://youtu.be/7_neYtehy14)
+**Wie das Trinkfit Pad funktioniert sieht man in diesem Video:** Zum Anschauen klicken oder [Video auf YouTube ansehen](https://youtu.be/7_neYtehy14)
 
 
 [![Video ansehen](https://img.youtube.com/vi/7_neYtehy14/0.jpg)](https://youtu.be/7_neYtehy14)
