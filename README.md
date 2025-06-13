@@ -14,7 +14,7 @@ Ziel ist es, eine funktionale und visuell unterstützende Lösung zu entwickeln,
 [![Video ansehen](https://img.youtube.com/vi/7_neYtehy14/0.jpg)](https://youtu.be/7_neYtehy14)
 
 
-[**Link zu unserer Website**](https://trinkfit.wanaka.ch/)
+[**Zur Website www.trinkfit.wanaka.ch**](https://trinkfit.wanaka.ch/)
 
 ![TrinkFit Produkt](images/TrinkFit_Produkt.jpg)
 
@@ -29,7 +29,7 @@ TrinkFit erkennt Trinkvorgänge automatisch und bietet Feedback über Lichtsigna
 **Unsere Idee haben wir zu Beginn des Projekts in einem Flussdiagramm aufgezeichnet:**
 ![Flussdiagramm_Trinkfit](images/Flussdiagramm_TrinkFit.png)
 
-**Link zum Flussdiagram:** https://www.figma.com/design/Npsf3iH8oIAoPRJ0vXs33R/IM-4-%E2%80%93-App-Konzeption-Milena-Stadtelmann-Wanaka-Emmenegger?node-id=1402-201&t=jZKB1xrbvuY2Au7f-1
+[**zum Flussdiagram**!(https://www.figma.com/design/Npsf3iH8oIAoPRJ0vXs33R/IM-4-%E2%80%93-App-Konzeption-Milena-Stadtelmann-Wanaka-Emmenegger?node-id=1402-201&t=jZKB1xrbvuY2Au7f-1)
 
 ---
 
