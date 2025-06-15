@@ -138,6 +138,8 @@ Der Ablauf ist als **Zustandsautomat** implementiert und umfasst die Phasen:
 
 [**Vollständiger Arduino-Code**](https://drive.google.com/drive/folders/1Nao8af1tqWhV8pDMCVJr2XZtJIiHb1tH?usp=drive_link)
 
+[**Zusätzliche Erklärungen zu den Codes sind im Anhang der Schritt-für-Schritt Bauanleitung aufgeführt**](https://docs.google.com/document/d/1v_iRln1-3_Z1rBspjY5z-w0nKUgZ-AYMQeU4w6nC4Hc/edit?usp=drive_link)
+
 Die gesendeten Daten werden über eine PHP-API (`load.php`) an eine MySQL-Datenbank übermittelt.  
 
 ### Website
@@ -150,7 +152,6 @@ Die gesamte Website ist responsive aufgebaut.
 
 Genauere Erläuterungen zu den verwendeten Codes sind in den jeweiligen Code-Abschnitten im GitHub einszusehen.
 
-[**Zusätzliche Erklärungen zu den Codes sind im Anhang der Schritt-für-Schritt Bauanleitung aufgeführt**](https://docs.google.com/document/d/1v_iRln1-3_Z1rBspjY5z-w0nKUgZ-AYMQeU4w6nC4Hc/edit?usp=drive_link)
 
 ---
 
