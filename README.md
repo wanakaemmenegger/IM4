@@ -102,9 +102,6 @@ TrinkFit erkennt Trinkvorgänge automatisch und bietet Feedback über Lichtsigna
 | `mc.ino`               | Arduino-Hauptprogramm: Gewichtsmessung, Anzeige, Logik         |
 | `load.php`             | Serverlogik: Empfängt Daten und schreibt sie in die Datenbank  |
 | `chart_data.php`       | Serverlogik: Stellt gespeicherte Trinkdaten als JSON bereit    |
-| `chart.js`             | Visualisiert Daten auf der Website                             |
-| `tipps.js`             | Zeigt Trinktipps auf Website, Wechsel all 2 Minuten            |
-| `popup.js`             | Eingabe von Alter und Gewicht des Users, Berechnung Wasserbedarf   |
 
 
 #### Web-Frontend & Konfiguration
@@ -113,7 +110,10 @@ TrinkFit erkennt Trinkvorgänge automatisch und bietet Feedback über Lichtsigna
 |------------------------|----------------------------------------------------------------|
 | `index.html`           | Grundstruktur der Website                                      |
 | `styles.css`           | Visuelles Styling der Website                                  |
-| `db_config.php`        | Stellt Verbindung zur Datenbank her (für PHP)                  |
+| `db_config.php`        | Stellt Verbindung zur Datenbank her                            |
+| `chart.js`             | Visualisiert Daten auf der Website                             |
+| `tipps.js`             | Zeigt Trinktipps auf Website, Wechsel all 2 Minuten            |
+| `popup.js`             | Eingabe von Alter und Gewicht des Users, Berechnung Wasserbedarf   |
 | Images                 | Statische Inhalte zur Darstellung                              |
 
 
