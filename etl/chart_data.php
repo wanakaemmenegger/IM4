@@ -1,4 +1,11 @@
 <?php
+/*
+ * Dieses Skript stellt zwei Datenauswertungen aus der Tabelle "sensordata" als JSON bereit:
+ * 1. Wochenverlauf: Tageswerte der letzten 7 Tage (inkl. heute) mit Datum, Wochentag und Verbrauchssumme.
+ * 2. Tagesfortschritt: Verbrauchsmenge des aktuellen Tages.
+ * 
+ * Die Daten werden für eine grafische Darstellung aufbereitet.
+ */
 require_once("db_config.php");
 header('Content-Type: application/json');
 
